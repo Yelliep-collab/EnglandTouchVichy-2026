@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>England Touch — ETC 2026 Vichy Tour Brochure</title>
+<style>
+:root {
+  --navy:#0a1628; --teal:#1a7a8a; --teal-light:#22a0b4;
+  --gold:#c8a84b; --gold-light:#e0c56a;
+  --white:#ffffff; --light-bg:#f5f7fa; --border:#dde3ec;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{font-family:'Segoe UI',Arial,sans-serif;background:var(--light-bg);color:#2a2a2a;line-height:1.6;}
+
+/* HEADER */
+header{background:var(--navy);position:sticky;top:0;z-index:1000;box-shadow:0 2px 12px rgba(0,0,0,.4);}
+.header-top{display:flex;align-items:center;justify-content:space-between;padding:10px 24px;border-bottom:1px solid rgba(200,168,75,.3);}
+.header-brand{display:flex;align-items:center;gap:14px;}
+.header-brand img{height:44px;width:auto;}
+.header-brand-text{color:var(--white);line-height:1.2;}
+.main-title{font-size:1.1rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;}
+.sub-title{font-size:.75rem;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;}
+
+/* NAV */
+nav{background:var(--navy);display:flex;flex-wrap:wrap;border-top:2px solid var(--gold);}
+.nav-item{position:relative;}
+.nav-btn{background:none;border:none;color:var(--white);font-size:.78rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:12px 18px;cursor:pointer;display:flex;align-items:center;gap:6px;transition:background .2s;white-space:nowrap;}
+.nav-btn:hover,.nav-btn.active{background:var(--teal);}
+.nav-btn .arrow{font-size:.6rem;transition:transform .2s;}
+.nav-item.open .nav-btn .arrow{transform:rotate(180deg);}
+.dropdown{display:none;position:absolute;top:100%;left:0;background:var(--navy);border-top:2px solid var(--gold);min-width:230px;z-index:2000;box-shadow:4px 4px 16px rgba(0,0,0,.5);max-height:75vh;overflow-y:auto;}
+.nav-item.open .dropdown{display:block;}
+.dropdown a{display:block;color:#ccd6f6;text-decoration:none;padding:9px 18px;font-size:.78rem;font-weight:500;border-bottom:1px solid rgba(255,255,255,.06);transition:background .15s;}
+.dropdown a:hover{background:var(--teal);color:var(--white);}
+.dropdown-cat{color:var(--gold)!important;font-size:.68rem!important;padding:7px 18px 4px!important;pointer-events:none;letter-spacing:.08em;text-transform:uppercase;font-weight:700!important;}
+
+/* SECTIONS */
+.page-section{display:none;animation:fadeIn .3s ease;}
+.page-section.active{display:block;}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* HERO */
+.hero{position:relative;height:520px;overflow:hidden;display:flex;align-items:flex-end;}
+.hero-bg{position:absolute;inset:0;background-size:cover;background-position:center 20%;filter:brightness(.52);}
+.hero-content{position:relative;padding:40px 48px;color:var(--white);max-width:800px;}
+.hero-content .eyebrow{color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px;}
+.hero-content h1{font-size:2.8rem;font-weight:800;line-height:1.1;text-shadow:0 2px 8px rgba(0,0,0,.5);}
+.hero-content .sub{margin-top:12px;font-size:1.1rem;color:rgba(255,255,255,.9);}
+.hero-content .badge{margin-top:18px;display:inline-block;background:var(--gold);color:var(--navy);font-weight:700;font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;padding:7px 18px;border-radius:3px;}
+
+/* CONTENT */
+.content-wrap{max-width:1100px;margin:0 auto;padding:40px 24px;}
+.section-header{border-left:5px solid var(--gold);padding-left:16px;margin-bottom:30px;}
+.section-header h2{font-size:1.8rem;color:var(--navy);font-weight:800;}
+.section-header p{color:#555;margin-top:6px;}
+
+/* STATS */
+.stats-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin:30px 0;}
+.stat-box{background:var(--navy);color:var(--white);border-radius:8px;padding:20px;text-align:center;}
+.stat-box .number{font-size:2.2rem;font-weight:800;color:var(--gold);line-height:1;}
+.stat-box .label{font-size:.75rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.06em;margin-top:6px;}
+
+/* CARDS */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;margin:30px 0;}
+.card{background:var(--white);border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,.08);border:1px solid var(--border);transition:transform .2s,box-shadow .2s;}
+.card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.13);}
+.card-img{width:100%;height:200px;object-fit:cover;}
+.card-body{padding:20px;}
+.card-body h3{color:var(--navy);font-size:1.1rem;font-weight:700;margin-bottom:8px;}
+.card-body p,.card-body li{color:#555;font-size:.9rem;line-height:1.6;}
+
+/* INFO BOXES */
+.info-box{background:var(--white);border-radius:8px;border:1px solid var(--border);padding:24px;margin:20px 0;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.info-box h3{color:var(--navy);font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--gold);}
+.info-box p,.info-box li{color:#444;font-size:.9rem;margin-bottom:8px;}
+.info-box ul{padding-left:18px;}
+.info-box .important{background:#fff8e6;border-left:4px solid var(--gold);padding:12px 16px;border-radius:0 6px 6px 0;margin-top:12px;font-size:.88rem;color:#555;}
+.info-box .important a{color:var(--teal);}
+.info-box .warning{background:#fff3cd;border-left:4px solid #ffc107;padding:12px 16px;border-radius:0 6px 6px 0;margin-top:12px;font-size:.88rem;}
+
+/* TABLES */
+.data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.88rem;}
+.data-table th{background:var(--navy);color:var(--white);padding:10px 14px;text-align:left;font-weight:600;}
+.data-table td{padding:9px 14px;border-bottom:1px solid var(--border);}
+.data-table tr:nth-child(even) td{background:#f8fafd;}
+.data-table tr:hover td{background:#e8f4f7;}
+
+/* CHECKLISTS */
+.checklist{list-style:none;padding:0;}
+.checklist li{padding:8px 0;border-bottom:1px solid var(--border);display:flex;align-items:flex-start;gap:10px;font-size:.9rem;}
+.checklist li:last-child{border:none;}
+.checklist li::before{content:"✓";color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px;}
+
+/* SCHEDULE */
+.day-block{background:var(--white);border-radius:8px;border:1px solid var(--border);margin:16px 0;overflow:hidden;}
+.day-header{background:var(--teal);color:var(--white);padding:12px 20px;font-weight:700;font-size:.95rem;text-transform:uppercase;letter-spacing:.05em;}
+
+/* CONTACTS */
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin:20px 0;}
+.contact-card{background:var(--white);border-radius:8px;border:1px solid var(--border);padding:18px 20px;}
+.contact-card h4{color:var(--teal);font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;padding-bottom:8px;border-bottom:2px solid var(--border);}
+.contact-card .row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #f0f0f0;font-size:.83rem;}
+.contact-card .row:last-child{border:none;}
+.contact-card .row .label{color:#888;font-size:.78rem;}
+.contact-card .row a{color:var(--teal);text-decoration:none;font-size:.78rem;}
+
+/* PHOTO BANNER */
+.photo-banner{width:100%;height:260px;object-fit:cover;border-radius:8px;margin:20px 0;}
+
+/* SQUAD INDEX */
+.squad-filter{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0;}
+.filter-btn{background:var(--white);border:2px solid var(--border);color:var(--navy);padding:7px 16px;border-radius:20px;font-size:.78rem;font-weight:600;cursor:pointer;letter-spacing:.04em;text-transform:uppercase;transition:all .2s;}
+.filter-btn:hover,.filter-btn.active{background:var(--navy);border-color:var(--navy);color:var(--white);}
+.sq-index-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:20px;margin-top:24px;}
+.sq-index-card{position:relative;height:220px;border-radius:10px;overflow:hidden;cursor:pointer;transition:transform .2s,box-shadow .2s;}
+.sq-index-card:hover{transform:translateY(-4px);box-shadow:0 10px 28px rgba(0,0,0,.25);}
+.sq-index-bg{position:absolute;inset:0;transition:transform .3s;}
+.sq-index-card:hover .sq-index-bg{transform:scale(1.05);}
+.sq-index-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.92) 0%,rgba(10,22,40,.3) 60%,transparent 100%);}
+.sq-index-text{position:absolute;bottom:0;left:0;right:0;padding:16px 18px;color:var(--white);}
+.sq-index-div{font-size:.68rem;color:var(--gold);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:4px;}
+.sq-index-name{font-size:1rem;font-weight:800;line-height:1.2;}
+.sq-index-meta{font-size:.75rem;color:rgba(255,255,255,.6);margin-top:4px;}
+
+/* SQUAD DETAIL */
+.squad-hero{position:relative;height:460px;background-size:cover;display:flex;align-items:flex-end;}
+.squad-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.95) 0%,rgba(10,22,40,.45) 45%,rgba(10,22,40,.1) 100%);}
+.squad-hero-content{position:relative;padding:36px 48px;color:var(--white);max-width:900px;}
+.sq-back-btn{font-size:.78rem;color:var(--gold);cursor:pointer;font-weight:600;letter-spacing:.05em;text-transform:uppercase;margin-bottom:16px;display:inline-block;}
+.sq-back-btn:hover{text-decoration:underline;}
+.sq-division-tag{font-size:.75rem;color:var(--gold-light);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:8px;}
+.sq-title{font-size:2.6rem;font-weight:900;line-height:1.1;text-shadow:0 2px 10px rgba(0,0,0,.6);}
+.sq-subtitle{font-size:1rem;color:rgba(255,255,255,.75);margin-top:8px;}
+.squad-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.squad-block{background:var(--white);border-radius:8px;border:1px solid var(--border);padding:22px;margin-bottom:20px;box-shadow:0 1px 4px rgba(0,0,0,.05);}
+.squad-block-title{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--teal);border-bottom:2px solid var(--gold);padding-bottom:8px;margin-bottom:14px;}
+.player-table{width:100%;border-collapse:collapse;font-size:.85rem;}
+.player-table tr{border-bottom:1px solid #f0f0f0;}
+.player-table tr:last-child{border:none;}
+.player-table td{padding:5px 4px;}
+.player-table .pnum{color:var(--teal);font-weight:800;width:26px;font-size:.82rem;}
+.player-table .pname{padding-right:16px;}
+.ntrs{font-size:.75rem;color:#888;font-style:italic;margin-top:10px;padding-top:8px;border-top:1px solid #eee;}
+.ntrs span{font-weight:700;color:#666;}
+.staff-table{width:100%;border-collapse:collapse;font-size:.85rem;}
+.staff-table tr{border-bottom:1px solid #f0f0f0;}
+.staff-table tr:last-child{border:none;}
+.staff-table td{padding:7px 4px;}
+.staff-table .srole{color:#888;font-size:.78rem;width:45%;}
+.staff-table .sname{font-weight:600;color:var(--navy);}
+.sq-detail-text{font-size:.88rem;color:#444;line-height:1.7;}
+.route-text{background:#f8fafd;border-left:3px solid var(--gold);padding:10px 14px;border-radius:0 6px 6px 0;}
+.opp-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px;}
+.opp-tag{background:#eef4f6;border:1px solid #c5dde5;color:var(--teal);font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:12px;}
+
+/* NUTRITION */
+.nutr-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 28px;}
+.nutr-tab{background:var(--white);border:2px solid var(--border);color:var(--navy);padding:8px 18px;border-radius:20px;font-size:.78rem;font-weight:700;cursor:pointer;letter-spacing:.04em;text-transform:uppercase;transition:all .2s;}
+.nutr-tab:hover,.nutr-tab.active{background:var(--teal);border-color:var(--teal);color:var(--white);}
+.nutr-panel{display:none;}
+.nutr-panel.active{display:block;animation:fadeIn .3s ease;}
+.nutr-intro{background:linear-gradient(135deg,var(--navy) 0%,var(--teal) 100%);border-radius:10px;padding:28px 32px;color:var(--white);margin-bottom:28px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;}
+.nutr-intro-icon{font-size:3.2rem;flex-shrink:0;}
+.nutr-intro h3{font-size:1.2rem;font-weight:800;margin-bottom:6px;}
+.nutr-intro p{font-size:.88rem;color:rgba(255,255,255,.85);line-height:1.6;}
+.nutr-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin:20px 0;}
+.nutr-card{background:var(--white);border-radius:8px;border:1px solid var(--border);overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.06);}
+.nutr-card-header{background:var(--navy);color:var(--white);padding:10px 16px;display:flex;align-items:center;gap:10px;}
+.nutr-card-header span{font-size:1.1rem;}
+.nutr-card-header h4{font-size:.82rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;}
+.nutr-card table{width:100%;border-collapse:collapse;font-size:.82rem;}
+.nutr-card table th{background:#f5f7fa;color:var(--navy);font-weight:700;padding:7px 12px;text-align:left;font-size:.74rem;text-transform:uppercase;letter-spacing:.04em;}
+.nutr-card table td{padding:7px 12px;border-bottom:1px solid #f0f0f0;color:#444;}
+.nutr-card table tr:last-child td{border:none;}
+.nutr-card table .carb-val{color:var(--teal);font-weight:700;text-align:right;}
+.nutr-note{background:#fff8e6;border-left:4px solid var(--gold);border-radius:0 6px 6px 0;padding:12px 16px;font-size:.84rem;color:#666;margin:16px 0;}
+.nutr-note strong{color:var(--navy);}
+.nutr-principle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:20px 0;}
+.nutr-principle{background:var(--white);border-radius:8px;border:1px solid var(--border);padding:16px 18px;display:flex;gap:12px;}
+.nutr-principle .icon{font-size:1.5rem;flex-shrink:0;margin-top:2px;}
+.nutr-principle h5{font-size:.82rem;font-weight:700;color:var(--navy);margin-bottom:4px;text-transform:uppercase;letter-spacing:.04em;}
+.nutr-principle p{font-size:.8rem;color:#555;line-height:1.5;}
+.restaurant-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin:20px 0;}
+.restaurant-item{background:var(--white);border-radius:8px;border:1px solid var(--border);padding:16px 18px;}
+.restaurant-item h4{color:var(--navy);font-size:.88rem;font-weight:700;margin-bottom:4px;}
+.restaurant-item .rest-type{font-size:.74rem;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:8px;}
+.restaurant-item p{font-size:.8rem;color:#666;line-height:1.6;}
+.meal-builder{background:var(--white);border-radius:8px;border:1px solid var(--border);padding:20px;margin:20px 0;}
+.meal-builder h4{color:var(--navy);font-weight:700;font-size:.9rem;margin-bottom:14px;padding-bottom:10px;border-bottom:2px solid var(--gold);}
+.meal-row{display:flex;align-items:baseline;gap:10px;padding:8px 0;border-bottom:1px solid #f5f5f5;font-size:.84rem;}
+.meal-row:last-child{border:none;}
+.meal-row .meal-label{color:var(--teal);font-weight:700;font-size:.74rem;text-transform:uppercase;letter-spacing:.05em;min-width:110px;flex-shrink:0;}
+.meal-row .meal-opts{color:#444;}
+.snack-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:20px 0;}
+@media(max-width:600px){.snack-cols{grid-template-columns:1fr;}.nutr-intro{flex-direction:column;gap:14px;}}
+
+/* FOOTER */
+footer{background:var(--navy);color:rgba(255,255,255,.7);text-align:center;padding:30px 24px;margin-top:60px;font-size:.85rem;border-top:3px solid var(--gold);}
+footer strong{color:var(--gold);}
+
+/* RESPONSIVE */
+@media(max-width:800px){
+  nav{overflow:visible;flex-wrap:wrap;justify-content:center;}
+  .nav-btn{padding:10px 12px;font-size:0.7rem;}
+  .dropdown{position:fixed;top:120px;left:10px;right:10px;width:auto;max-height:70vh;overflow-y:auto;box-shadow:0 4px 20px rgba(0,0,0,.4);z-index:9999;}
+  .hero{height:360px;}
+  .hero-content h1{font-size:1.8rem;}
+  .hero-content{padding:24px;}
+  .squad-hero{height:340px;}
+  .sq-title{font-size:1.8rem;}
+  .squad-hero-content{padding:24px;}
+  .squad-detail-grid{grid-template-columns:1fr;}
+  .sq-index-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:500px){
+  .sq-index-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-top">
+    <div class="header-brand">
+      <img src="images/img_1.jpeg" alt="England Touch">
+      <div class="header-brand-text">
+        <div class="main-title">England Touch</div>
+        <div class="sub-title">ETC 2026 — Vichy, France</div>
+      </div>
+    </div>
+    <div style="color:var(--gold);font-size:.8rem;font-weight:700;letter-spacing:.06em;text-align:right;">
+      21–25 JULY 2026<br><span style="color:rgba(255,255,255,.6);font-weight:400;">14 TOURING TEAMS</span>
+    </div>
+  </div>
+  <nav id="main-nav">
+    <div class="nav-item"><button class="nav-btn active" onclick="showSection('home',this)">Home</button></div>
+    <div class="nav-item" id="nav-pretour">
+      <button class="nav-btn" onclick="toggleDropdown('nav-pretour')">Pre-Tour <span class="arrow">▼</span></button>
+      <div class="dropdown"><a href="#" onclick="showSection('training-camp',null);closeAll()">Final Training Camp</a></div>
+    </div>
+    <div class="nav-item" id="nav-event">
+      <button class="nav-btn" onclick="toggleDropdown('nav-event')">The Event <span class="arrow">▼</span></button>
+      <div class="dropdown">
+        <a href="#" onclick="showSection('welcome-vichy',null);closeAll()">Welcome to Vichy</a>
+        <a href="#" onclick="showSection('venue',null);closeAll()">The Venue</a>
+        <a href="#" onclick="showSection('town',null);closeAll()">The Town of Vichy</a>
+      </div>
+    </div>
+    <div class="nav-item" id="nav-player">
+      <button class="nav-btn" onclick="toggleDropdown('nav-player')">Player Information <span class="arrow">▼</span></button>
+      <div class="dropdown">
+        <a href="#" onclick="showSection('accommodation',null);closeAll()">Accommodation</a>
+        <a href="#" onclick="showSection('insurance',null);closeAll()">Insurance</a>
+        <a href="#" onclick="showSection('performance',null);closeAll()">Performance Support</a>
+         <a href="#" onclick="showSection('nutrition',null);closeAll()">Nutrition &amp; Fuelling</a>
+        <a href="#" onclick="showSection('registration',null);closeAll()">Athlete Registration</a>
+        <a href="#" onclick="showSection('eligibility',null);closeAll()">Eligibility &amp; Documentation</a>
+        <a href="#" onclick="showSection('passports',null);closeAll()">Passports &amp; Travel</a>
+        <a href="#" onclick="showSection('getting-there',null);closeAll()">Getting to the Venue</a>
+        <a href="#" onclick="showSection('conduct',null);closeAll()">Policies &amp; Conduct</a>
+      </div>
+    </div>
+    <div class="nav-item" id="nav-tour">
+      <button class="nav-btn" onclick="toggleDropdown('nav-tour')">Tour Information <span class="arrow">▼</span></button>
+      <div class="dropdown">
+        <a href="#" onclick="showSection('tour-people',null);closeAll()">Key contacts</a>
+        <a href="#" onclick="showSection('schedule',null);closeAll()">Event Schedule</a>
+      </div>
+    </div>
+    <div class="nav-item" id="nav-squads">
+      <button class="nav-btn" onclick="toggleDropdown('nav-squads')">The Squads <span class="arrow">▼</span></button>
+      <div class="dropdown"><a href="#" onclick="showSection('squads',null);closeAll()">— All Squads —</a>
+<a href="#" class="dropdown-cat">── Opens ──</a>
+<a href="#" onclick="showSection('squad-mens-open',null);closeAll()">England Men's Open</a>
+<a href="#" onclick="showSection('squad-womens-open',null);closeAll()">England Women's Open</a>
+<a href="#" onclick="showSection('squad-mixed-open',null);closeAll()">England Mixed Open</a>
+<a href="#" class="dropdown-cat">── Seniors ──</a>
+<a href="#" onclick="showSection('squad-womens-27s',null);closeAll()">England Women's 27s</a>
+<a href="#" onclick="showSection('squad-mens-30s',null);closeAll()">England Men's 30s</a>
+<a href="#" onclick="showSection('squad-mixed-30s',null);closeAll()">England Mixed 30s</a>
+<a href="#" onclick="showSection('squad-mens-35s',null);closeAll()">England Men's 35s</a>
+<a href="#" onclick="showSection('squad-womens-35s',null);closeAll()">England Women's 35s</a>
+<a href="#" class="dropdown-cat">── Masters ──</a>
+<a href="#" onclick="showSection('squad-mens-40s',null);closeAll()">England Men's 40s</a>
+<a href="#" onclick="showSection('squad-womens-40s',null);closeAll()">England Women's 40s</a>
+<a href="#" onclick="showSection('squad-mens-45s',null);closeAll()">England Men's 45s</a>
+<a href="#" onclick="showSection('squad-womens-45s',null);closeAll()">England Women's 45s</a>
+<a href="#" onclick="showSection('squad-mens-50s',null);closeAll()">England Men's 50s</a>
+<a href="#" onclick="showSection('squad-mens-55s',null);closeAll()">England Men's 55s</a></div>
+    </div>
+  </nav>
+</header>
+
+<!-- HOME -->
+<div id="home" class="page-section active">
+  <div class="hero">
+    <div class="hero-bg" style="background-image:url('images/img_2.jpeg');background-position:center 20%;"></div>
+    <div class="hero-content">
+      <div class="eyebrow">Official Tour Brochure · Version 1: 05-06-26</div>
+      <h1>European Touch<br>Championships 2026</h1>
+      <div class="sub">Vichy, France · 21–25 July 2026</div>
+      <div class="badge">14 Touring Teams · One Nation</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="info-box"><div class="important" style="margin-top:0;">🔗 <a href="https://www.internationaltouch.org/events/euros/2026/" target="_blank" rel="noopener">View the Official Event Page — internationaltouch.org</a></div></div>
+    <div class="stats-row">
+      <div class="stat-box"><div class="number">14</div><div class="label">Touring Teams</div></div>
+      <div class="stat-box"><div class="number">78</div><div class="label">Entries — Largest Euros Ever</div></div>
+      <div class="stat-box"><div class="number">13</div><div class="label">Recognised Divisions</div></div>
+      <div class="stat-box"><div class="number">7+</div><div class="label">Games Per Team</div></div>
+      <div class="stat-box"><div class="number">5</div><div class="label">Tournament Days</div></div>
+    </div>
+    <div class="section-header"><h2>Welcome to the Campaign</h2><p>England Touch travels to Vichy in July 2026 for the largest European Touch Championships in the history of the sport.</p></div>
+    <div class="info-box">
+      <h3>The Campaign at a Glance</h3>
+      <table class="data-table">
+        <tr><th>Event</th><td>European Touch Championships 2026 (Tier 2A Federation Event)</td></tr>
+        <tr><th>Host</th><td>Touch France, on behalf of the Federation of International Touch</td></tr>
+        <tr><th>Dates</th><td>Tuesday 21 July – Saturday 25 July 2026</td></tr>
+        <tr><th>England Tour</th><td>Tuesday 21 July – Sunday 26 July 2026 (5 nights)</td></tr>
+        <tr><th>Venue</th><td>Parc Omnisports Auvergne-Rhône-Alpes, Vichy</td></tr>
+        <tr><th>Divisions</th><td>13 recognised divisions; England entering 14 touring teams</td></tr>
+        <tr><th>Entries</th><td>Built on 78 entries — the largest Euros to date</td></tr>
+        <tr><th>Format</th><td>At least 7 games per team; 2 × 20-minute halves</td></tr>
+        <tr><th>Live Stream</th><td>Fields 1, 2 and 3 are expected to be live streamed</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- TRAINING CAMP -->
+<div id="training-camp" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Final Training Camp</h2><p>University of Warwick · 4–5 July 2026</p></div>
+    <img src="images/img_3.jpeg" alt="Training action" class="photo-banner">
+    <div class="info-box"><h3>When Is It</h3><p>The last stop before Vichy. Our final preparation camp takes place at the <strong>University of Warwick</strong> on the weekend of <strong>4–5 July</strong>. Fourteen squads in one place for the last time before France: sharpen fitness, cement combinations, align on game plans. Our 18s, 20s and 20s Lions Teams will also be joining us.</p></div>
+    <div class="info-box"><h3>Tour Presentation</h3><p>On Saturday evening, we will be hosting the <strong>Tour Presentation Event</strong> for all athletes, coaches, team managers, performance support staff and referees — with dinner provided. Mark the evening in your diary now.</p></div>
+    <div class="info-box"><h3>Camp Brief</h3><p>The full Final Camp Brief will be issued nearer the date. Your coaches and team managers will be in touch ahead of the camp with squad-specific schedules.</p><p style="margin-top:10px;font-weight:700;color:var(--navy);">This is the last chance to get everything right before the tournament. Make the most of this opportunity.</p></div>
+  </div>
+</div>
+
+<!-- WELCOME VICHY -->
+<div id="welcome-vichy" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Welcome to Vichy 2026</h2><p>The European Touch Championships return for the largest Euros in history.</p></div>
+    <img src="images/img_4.jpeg" alt="Parc Omnisports Vichy" class="photo-banner">
+    <div class="info-box"><p>Hosted by Touch France on behalf of FIT, the event runs from <strong>Tuesday 21 to Saturday 25 July 2026</strong> across thirteen recognised playing divisions. England Touch travels in numbers, fielding <strong>fourteen touring teams</strong> across the Opens, Seniors and Masters categories — one of the broadest squads England has ever assembled for a European campaign.</p></div>
+  </div>
+</div>
+
+<!-- VENUE -->
+<div id="venue" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>The Venue</h2><p>Parc Omnisports Auvergne-Rhône-Alpes — Vichy</p></div>
+    <img src="images/img_5.jpeg" alt="Parc Omnisports aerial view" class="photo-banner">
+    <div class="info-box"><p>All games are played at the Parc Omnisports in Bellerive-sur-Allier. Set in around <strong>120 hectares</strong> of wooded parkland on the banks of Lake Allier — one of the largest multi-sports complexes in Europe, used in the build-up to the Paris 2024 Olympic Games.</p></div>
+    <div class="info-box"><h3>Venue Facts</h3>
+      <table class="data-table">
+        <tr><th>Address</th><td>Parc Omnisports, Route du Pont de l'Europe, 03700 Bellerive-sur-Allier, Vichy</td></tr>
+        <tr><th>Setting</th><td>~120 hectares beside Lake Allier, ~5 minutes from town centre</td></tr>
+        <tr><th>Playing Surfaces</th><td>~10 grass pitches plus a synthetic pitch</td></tr>
+        <tr><th>Live-Streamed Pitches</th><td>Fields 1, 2 and 3 (expected)</td></tr>
+        <tr><th>Opening Ceremony</th><td>Parade and ceremony at Darragon Stadium (Tuesday 21 July)</td></tr>
+        <tr><th>Access</th><td>Three road entrances; MobiVie bus network (lines E and I)</td></tr>
+      </table>
+      <div class="important">Field numbers and timings are confirmed by FIT approximately three weeks before the event and are subject to change.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TOWN -->
+<div id="town" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>The Town of Vichy</h2><p>Queen of the Spa Towns</p></div>
+    <img src="images/img_6.jpeg" alt="Vichy town hall" class="photo-banner">
+    <div class="info-box"><h3>Queen of the Water Towns</h3><p>Vichy sits on the River Allier in the Auvergne. Emperor Napoleon III transformed Vichy in the 1860s into the elegant resort it remains today — earning it the nickname <em>"Reine des Villes d'Eaux"</em>. A compact, walkable town of Belle Époque grandeur, leafy riverside parks and a relaxed spa-town pace.</p></div>
+    <div class="info-box"><h3>What to See and Do</h3>
+      <ul class="checklist">
+        <li><strong>Hall des Sources</strong> — the Belle Époque pavilion where thermal springs are piped for tasting.</li>
+        <li><strong>Les Parcs de Vichy &amp; the Allier esplanade</strong> — riverside promenades, cafés, cycling, and a town beach in summer.</li>
+        <li><strong>Palais des Congrès-Opéra</strong> — Vichy's ornate opera house (lit up in summer for the "Lights of Bourbonnais" show).</li>
+        <li><strong>Boulevard des États-Unis &amp; the Imperial Chalets</strong> — a parade of flamboyant 19th-century villas.</li>
+        <li><strong>Église Saint-Blaise</strong> — Art Deco and Byzantine styles, with a Black Madonna.</li>
+        <li><strong>Source des Célestins</strong> — the most famous of the springs; tour the pavilion.</li>
+      </ul>
+    </div>
+    <div class="info-box"><h3>Quick Facts</h3>
+      <table class="data-table">
+        <tr><th>Region</th><td>Allier, Auvergne-Rhône-Alpes, central France</td></tr>
+        <tr><th>Known For</th><td>Thermal springs, Belle Époque architecture, Vichy Célestins water</td></tr>
+        <tr><th>Nearest City</th><td>Clermont-Ferrand (with onward rail links to Paris)</td></tr>
+        <tr><th>Getting Around</th><td>Compact and walkable; electric buses, tourist train and river boat</td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- ACCOMMODATION -->
+<div id="accommodation" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Accommodation</h2><p>Two historic hotels in the heart of Vichy</p></div>
+    <div class="info-box"><h3>A Note on Our Hotels</h3><p>England's accommodation is a step above what you might expect — and we want to be transparent about why. England Touch followed the official FIT/Touch France hotel allocation process, however there was a miscommunication and other nations booked independently, which significantly reduced available options. The remaining accommodation consisted of approximately 50 separate Airbnbs scattered across town, or a single block 45 minutes outside Vichy. Neither was acceptable.</p><div class="important">Touch France worked hard to find a solution at a comparable cost. The hotel may look like an upgrade, but it has not come at any additional expense to athletes. All 14 touring teams are kept across just two hotels, 5 minutes walk apart.</div></div>
+    <div class="card-grid">
+      <div class="card"><img src="images/img_7.jpeg" alt="Aletti Palace Hotel" class="card-img"><div class="card-body"><h3>Hotel 1: Aletti Palace Hôtel</h3><p>The last surviving Belle Époque palace hotel still operating in Vichy, beside the Opera House and Parc des Sources.</p><ul style="margin-top:10px;padding-left:16px;font-size:.85rem;color:#555;"><li>Historic palace atmosphere</li><li>Outdoor swimming pool and traditional French restaurant</li><li>Prime location opposite the Opera House</li><li>The hotel does not have a parking lot.</li></ul></div></div>
+      <div class="card"><img src="images/img_8.jpeg" alt="Celestins Spa Hotel" class="card-img"><div class="card-body"><h3>Hotel 2: Célestins Spa Thermal &amp; Hôtel</h3><p>Vichy's flagship modern luxury wellness hotel, directly connected to one of Europe's largest thermal spa complexes.</p><ul style="margin-top:10px;padding-left:16px;font-size:.85rem;color:#555;"><li>5-star wellness hotel</li><li>Direct access to thermal baths and spa treatments</li><li>Located beside Napoléon III Park and the Allier waterfront</li><li>Public underground parking is available at the hotel at €16.00 per 24 hours per vehicle. </li></ul></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- INSURANCE -->
+<div id="insurance" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Insurance</h2><p>England Touch Membership Insurance — What You're Covered For</p></div>
+    <div class="info-box"><h3>What Your Membership Insurance Covers</h3><ul class="checklist"><li><strong>Personal Accident Cover</strong> — For members under 80 injured whilst taking part in approved Touch Rugby activities.</li><li><strong>Public Liability Insurance</strong> — Protection against claims from third parties during sanctioned England Touch activities.</li><li><strong>Professional Indemnity Cover</strong> — For coaching, refereeing or other approved roles.</li><li><strong>Club and Volunteer Protection</strong> — Employers' liability, products liability, directors' &amp; officers' liability.</li></ul><div class="important">Full details: <a href="https://portal.sports-insure.co.uk/england-touch/en/home" target="_blank">portal.sports-insure.co.uk/england-touch</a></div></div>
+    <div class="info-box"><h3>What Is Not Covered</h3><ul class="checklist"><li><strong>Medical Treatment &amp; Rehabilitation</strong> — Not designed to provide comprehensive private medical treatment or physiotherapy costs.</li><li><strong>Loss of Earnings</strong> — Lost income if an injury prevents you from working.</li><li><strong>Personal Property &amp; Equipment</strong> — Damage to or theft of personal belongings, luggage, or sporting equipment.</li><li><strong>Travel-Related Risks</strong> — Standard membership insurance is not a comprehensive travel protection.</li></ul></div>
+    <div class="info-box"><h3>GHIC / EHIC — Travelling to Europe</h3><p>Athletes travelling to Europe should obtain a valid <strong>Global Health Insurance Card (GHIC)</strong> to access medically necessary state-provided healthcare in participating European countries.</p><div class="important">Apply at: <a href="https://www.nhs.uk/using-the-nhs/healthcare-abroad/apply-for-a-free-uk-global-health-insurance-card-ghic/" target="_blank">NHS.uk — Apply for a free GHIC</a></div></div>
+    <div class="info-box" style="border-left:4px solid var(--teal);background:#e8f7fa;"><h3>Before Travelling, Athletes Should Have:</h3><ul class="checklist"><li>England Touch Membership Insurance</li><li>A valid GHIC/EHIC when travelling in Europe</li><li>Appropriate travel insurance that covers sports participation</li></ul></div>
+  </div>
+</div>
+
+<!-- PERFORMANCE -->
+<div id="performance" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Performance Support Services</h2><p>Support available to all athletes during the European Touch Championships</p></div>
+    <div class="card-grid">
+      <div class="card"><div class="card-body"><h3>🏥 Medical &amp; Physiotherapy</h3><ul style="padding-left:16px;font-size:.85rem;color:#555;margin-top:8px;"><li>Injury assessment</li><li>Basic treatment and first aid</li><li>Return-to-play guidance</li><li>Management of acute injuries</li></ul></div></div>
+      <div class="card"><div class="card-body"><h3>💪 Strength &amp; Conditioning</h3><ul style="padding-left:16px;font-size:.85rem;color:#555;margin-top:8px;"><li>Match preparation</li><li>Warm-up protocols</li><li>Mobility and activation</li><li>Recovery strategies</li></ul></div></div>
+      <div class="card"><div class="card-body"><h3>🧠 Performance Psychology</h3><ul style="padding-left:16px;font-size:.85rem;color:#555;margin-top:8px;"><li>Performance preparation</li><li>Competition focus</li><li>Managing pressure and expectations</li><li>Confidence and resilience</li></ul></div></div>
+      <div class="card"><div class="card-body"><h3>🌡️ Heat Management</h3><ul style="padding-left:16px;font-size:.85rem;color:#555;margin-top:8px;"><li>Hydration monitoring</li><li>Cooling strategies</li><li>Modified warm-up protocols</li><li>Shade and recovery recommendations</li></ul></div></div>
+      <div class="card"><div class="card-body"><h3>🥗 Nutrition &amp; Hydration</h3><ul style="padding-left:16px;font-size:.85rem;color:#555;margin-top:8px;"><li>Arrive well hydrated each day</li><li>Follow guidance from Performance Support Team</li><li>Fuel appropriately before and after matches</li></ul></div></div>
+      <div class="card"><div class="card-body"><h3>😴 Recovery &amp; Wellness</h3><ul style="padding-left:16px;font-size:.85rem;color:#555;margin-top:8px;"><li>Sleep and rest</li><li>Mobility and stretching</li><li>Active recovery between matches</li></ul></div></div>
+    </div>
+    <div class="info-box"><h3>Athlete Medical Information</h3><p>All athletes will be required to complete the England Touch medical information form before travel, including: allergies and intolerances, dietary requirements, current medications, existing injuries, neurodivergence and/or additional needs, emergency contact details, and travel insurance details.</p><a href="https://forms.gle/XZgiHDQRHJHRoaXa7" target="_blank">Complete the England Touch medical information form</a></p><div class="important">This information will be treated confidentially by the performance staff team and will only be used to support player welfare and medical care whilst on Tour.</div></div>
+  </div>
+</div>
+
+
+<!-- NUTRITION -->
+<div id="nutrition" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>🥗 Nutrition Guide — Vichy 2026</h2><p>Fuelling and recovery guidance from the England Touch Performance Nutrition Team · For Tour Manager & Squad use</p></div>
+
+    <!-- MEAL TIMING OVERVIEW -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:24px 0;">
+      <div style="background:var(--navy);color:var(--white);border-radius:10px;padding:20px;text-align:center;cursor:pointer;" onclick="document.getElementById('nut-breakfast').scrollIntoView({behavior:'smooth'})">
+        <div style="font-size:2rem;">🌅</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--gold);margin-top:8px;">Breakfast</div>
+        <div style="font-size:.78rem;color:rgba(255,255,255,.7);margin-top:4px;">Carb-led match-day fuel</div>
+      </div>
+      <div style="background:var(--navy);color:var(--white);border-radius:10px;padding:20px;text-align:center;cursor:pointer;" onclick="document.getElementById('nut-lunch').scrollIntoView({behavior:'smooth'})">
+        <div style="font-size:2rem;">🥪</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--gold);margin-top:8px;">Lunch</div>
+        <div style="font-size:.78rem;color:rgba(255,255,255,.7);margin-top:4px;">Sandwiches, wraps & pots</div>
+      </div>
+      <div style="background:var(--navy);color:var(--white);border-radius:10px;padding:20px;text-align:center;cursor:pointer;" onclick="document.getElementById('nut-snacks').scrollIntoView({behavior:'smooth'})">
+        <div style="font-size:2rem;">⚡</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--gold);margin-top:8px;">Snacks</div>
+        <div style="font-size:.78rem;color:rgba(255,255,255,.7);margin-top:4px;">Fuelling & recovery options</div>
+      </div>
+      <div style="background:var(--navy);color:var(--white);border-radius:10px;padding:20px;text-align:center;cursor:pointer;" onclick="document.getElementById('nut-dinner').scrollIntoView({behavior:'smooth'})">
+        <div style="font-size:2rem;">🍽️</div>
+        <div style="font-size:1rem;font-weight:700;color:var(--gold);margin-top:8px;">Evening Meals</div>
+        <div style="font-size:.78rem;color:rgba(255,255,255,.7);margin-top:4px;">Hotel & restaurant guidance</div>
+      </div>
+    </div>
+
+    <!-- BREAKFAST -->
+    <div id="nut-breakfast" style="margin-top:32px;">
+      <div style="border-left:5px solid var(--teal);padding-left:16px;margin-bottom:20px;">
+        <h3 style="font-size:1.3rem;color:var(--navy);font-weight:800;">🌅 Breakfast</h3>
+        <p style="color:#666;font-size:.88rem;margin-top:4px;">Prioritise starchy carbohydrates to maximise muscle glycogen before the first match. Select from each category below.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+        <div class="info-box">
+          <h3>Select 1–2 Breakfast Items</h3>
+          <table class="data-table" style="font-size:.82rem;">
+            <tr><th>Food</th><th>Serving</th><th>Carbs</th></tr>
+            <tr><td>Porridge pots <em>(kettle needed)</em></td><td>1 pot / 2 sachets</td><td>~37g</td></tr>
+            <tr><td>Bagels</td><td>×1</td><td>40–50g</td></tr>
+            <tr><td>Weetabix / similar</td><td>×3 biscuits</td><td>39g</td></tr>
+            <tr><td>Pancakes</td><td>×2</td><td>25–30g</td></tr>
+            <tr><td>Rice pudding pot</td><td>150–200g</td><td>25–35g</td></tr>
+            <tr><td>Cornflakes / Rice Krispies</td><td>40g (variety box)</td><td>25g</td></tr>
+            <tr><td>Brioche <em>(non-choc)</em></td><td>×1</td><td>15–20g</td></tr>
+          </table>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:16px;">
+          <div class="info-box">
+            <h3>Select 1 Condiment</h3>
+            <table class="data-table" style="font-size:.82rem;">
+              <tr><th>Option</th><th>Serving</th><th>Carbs</th></tr>
+              <tr><td>Squeezy honey</td><td>2 tsp</td><td>11g</td></tr>
+              <tr><td>Maple syrup</td><td>2 tsp</td><td>10g</td></tr>
+              <tr><td>Fruit jam / marmalade</td><td>2 tsp</td><td>9g</td></tr>
+            </table>
+          </div>
+          <div class="info-box">
+            <h3>Select 1 Fruit Option</h3>
+            <p style="font-size:.82rem;color:#555;margin-bottom:8px;">Can also double as a pre-match snack before early TOs.</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span style="background:#e8f4f7;border-radius:20px;padding:5px 12px;font-size:.78rem;color:var(--navy);font-weight:600;">🍌 Banana <em style="font-weight:400;">(25–30g)</em></span>
+              <span style="background:#e8f4f7;border-radius:20px;padding:5px 12px;font-size:.78rem;color:var(--navy);font-weight:600;">🍇 Grapes <em style="font-weight:400;">(15–18g)</em></span>
+              <span style="background:#e8f4f7;border-radius:20px;padding:5px 12px;font-size:.78rem;color:var(--navy);font-weight:600;">🍎 Apple <em style="font-weight:400;">(15–20g)</em></span>
+              <span style="background:#e8f4f7;border-radius:20px;padding:5px 12px;font-size:.78rem;color:var(--navy);font-weight:600;">🌿 Raisins <em style="font-weight:400;">(20–30g)</em></span>
+              <span style="background:#e8f4f7;border-radius:20px;padding:5px 12px;font-size:.78rem;color:var(--navy);font-weight:600;">Dates <em style="font-weight:400;">(20–25g)</em></span>
+              <span style="background:#e8f4f7;border-radius:20px;padding:5px 12px;font-size:.78rem;color:var(--navy);font-weight:600;">Dried mango <em style="font-weight:400;">(20–25g)</em></span>
+            </div>
+          </div>
+          <div class="info-box" style="border-left:4px solid var(--teal);">
+            <h3>Fluid-Based Carbs</h3>
+            <p style="font-size:.82rem;color:#555;margin-bottom:8px;">For athletes who struggle with solid food. <strong>Always pair with at least 1 food item above.</strong> Opt for juice from concentrate (lower fibre aids digestion).</p>
+            <div style="display:flex;flex-wrap:wrap;gap:6px;">
+              <span style="background:#e8f4f7;border-radius:20px;padding:5px 12px;font-size:.78rem;color:var(--navy);">Orange / Apple / Pineapple juice — 250ml (~25–30g carbs)</span>
+              <span style="background:#e8f4f7;border-radius:20px;padding:5px 12px;font-size:.78rem;color:var(--navy);">Fruit smoothie — 250ml (~25–40g carbs)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LUNCH -->
+    <div id="nut-lunch" style="margin-top:36px;">
+      <div style="border-left:5px solid var(--teal);padding-left:16px;margin-bottom:20px;">
+        <h3 style="font-size:1.3rem;color:var(--navy);font-weight:800;">🥪 Lunch</h3>
+        <p style="color:#666;font-size:.88rem;margin-top:4px;">Timing will depend on tournament schedule. Build a sandwich/wrap or pick a pre-packed option. Aim for a proper small meal rather than snacks alone.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+        <div class="info-box">
+          <h3>Build a Sandwich / Wrap</h3>
+          <p style="font-size:.8rem;color:var(--teal);font-weight:700;margin-bottom:6px;">STEP 1 · Select 1–2 Carb Options (white varieties preferred)</p>
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:12px;">
+            <span style="background:#f0f7ff;border-radius:4px;padding:4px 10px;font-size:.78rem;">White tortilla wrap (30–35g)</span>
+            <span style="background:#f0f7ff;border-radius:4px;padding:4px 10px;font-size:.78rem;">Sliced bread ×2 (30–40g)</span>
+            <span style="background:#f0f7ff;border-radius:4px;padding:4px 10px;font-size:.78rem;">White baguette (45–55g)</span>
+            <span style="background:#f0f7ff;border-radius:4px;padding:4px 10px;font-size:.78rem;">White pitta (35–45g)</span>
+            <span style="background:#f0f7ff;border-radius:4px;padding:4px 10px;font-size:.78rem;">White bagel (40–50g)</span>
+            <span style="background:#f0f7ff;border-radius:4px;padding:4px 10px;font-size:.78rem;">White flatbread (25–30g)</span>
+          </div>
+          <p style="font-size:.8rem;color:var(--teal);font-weight:700;margin-bottom:6px;">STEP 2 · Select 1 Protein (+ cheese optional)</p>
+          <table class="data-table" style="font-size:.8rem;">
+            <tr><th>Protein</th><th>Serving</th><th>Protein</th></tr>
+            <tr><td>Chicken / turkey breast slices</td><td>3–4 slices</td><td>18–30g</td></tr>
+            <tr><td>Ham slices</td><td>3–4 slices</td><td>18–22g</td></tr>
+            <tr><td>Tuna</td><td>½–1 tin</td><td>15–30g</td></tr>
+            <tr><td>Boiled egg</td><td>×2</td><td>12–14g</td></tr>
+            <tr><td>Falafel / tofu / vegan chicken <em>(vg)</em></td><td>3–4 pieces</td><td>10–20g</td></tr>
+            <tr><td>Houmous / peanut butter <em>(vg)</em></td><td>2–3 tbsp</td><td>4–8g</td></tr>
+          </table>
+          <p style="font-size:.8rem;color:var(--teal);font-weight:700;margin:10px 0 4px;">STEP 3 · Add Salad (1–2 options)</p>
+          <p style="font-size:.8rem;color:#555;">Lettuce · Spinach · Rocket (handful each)</p>
+        </div>
+        <div class="info-box">
+          <h3>Pre-Packed Options</h3>
+          <div style="margin-bottom:14px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <span style="background:var(--teal);color:#fff;border-radius:4px;padding:2px 8px;font-size:.72rem;font-weight:700;">✓ GOOD</span>
+              <strong style="font-size:.85rem;">Pasta pots & rice bowls</strong>
+            </div>
+            <p style="font-size:.82rem;color:#555;">White pasta or rice with a lean protein. Quick, no preparation needed.</p>
+          </div>
+          <div style="margin-bottom:14px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <span style="background:var(--teal);color:#fff;border-radius:4px;padding:2px 8px;font-size:.72rem;font-weight:700;">✓ GOOD</span>
+              <strong style="font-size:.85rem;">Sushi packs</strong>
+            </div>
+            <p style="font-size:.82rem;color:#555;">Ideal for athletes with low appetite — light but effective fuelling.</p>
+          </div>
+          <div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;">
+              <span style="background:#e74c3c;color:#fff;border-radius:4px;padding:2px 8px;font-size:.72rem;font-weight:700;">⚠ AVOID</span>
+              <strong style="font-size:.85rem;">High-fat sandwiches & wraps</strong>
+            </div>
+            <p style="font-size:.82rem;color:#555;">Caesar sauce, creamy dressings — slow digestion and leave athletes feeling sluggish.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNACKS -->
+    <div id="nut-snacks" style="margin-top:36px;">
+      <div style="border-left:5px solid var(--teal);padding-left:16px;margin-bottom:20px;">
+        <h3 style="font-size:1.3rem;color:var(--navy);font-weight:800;">⚡ Snack Stations</h3>
+        <p style="color:#666;font-size:.88rem;margin-top:4px;">Use throughout the day at fuelling and recovery stations. Brand equivalents will be readily available in Vichy.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;">
+        <div class="info-box">
+          <h3 style="border-color:var(--teal);">⚡ Fuelling Snacks</h3>
+          <p style="font-size:.8rem;color:#666;margin-bottom:10px;">Use before and between matches to maintain energy stores.</p>
+          <table class="data-table" style="font-size:.82rem;">
+            <tr><th>Snack</th><th>Serving</th><th>Carbs</th></tr>
+            <tr><td>Cereal bar (Nature Valley or similar)</td><td>×1 pack</td><td>~20g</td></tr>
+            <tr><td>Fruit flapjack</td><td>75–100g</td><td>35–45g</td></tr>
+            <tr><td>Banana</td><td>×1 medium</td><td>25–30g</td></tr>
+            <tr><td>Raisins / dried mango / dates / apricots</td><td>handful / 2–3</td><td>15–30g</td></tr>
+            <tr><td>Rice cakes</td><td>×3</td><td>10–15g</td></tr>
+            <tr><td>Sports drink (Lucozade or equiv.)</td><td>250ml</td><td>15g</td></tr>
+          </table>
+        </div>
+        <div class="info-box">
+          <h3 style="border-color:#2ecc71;">💪 Recovery Snacks</h3>
+          <p style="font-size:.8rem;color:#666;margin-bottom:10px;">Use after matches to support muscle repair and recovery.</p>
+          <table class="data-table" style="font-size:.82rem;">
+            <tr><th>Snack</th><th>Serving</th><th>Protein</th></tr>
+            <tr><td>Protein yoghurt</td><td>×1 pot</td><td>20–30g</td></tr>
+            <tr><td>Protein bar</td><td>×1 bar</td><td>20–30g</td></tr>
+            <tr><td>Chocolate milk ⭐</td><td>250ml</td><td>8g + 22g carbs</td></tr>
+            <tr><td>Greek yoghurt + fruit</td><td>4 tbsp</td><td>6–7g</td></tr>
+            <tr><td>Boiled eggs</td><td>×2</td><td>12–14g</td></tr>
+          </table>
+          <div style="background:#f0fff4;border-left:3px solid #2ecc71;padding:8px 12px;margin-top:10px;border-radius:0 4px 4px 0;font-size:.8rem;color:#444;">
+            ⭐ Chocolate milk is an excellent dual-purpose option — carbohydrate + protein in one hit.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- EVENING MEALS -->
+    <div id="nut-dinner" style="margin-top:36px;">
+      <div style="border-left:5px solid var(--teal);padding-left:16px;margin-bottom:20px;">
+        <h3 style="font-size:1.3rem;color:var(--navy);font-weight:800;">🍽️ Evening Meals</h3>
+        <p style="color:#666;font-size:.88rem;margin-top:4px;">Your evening meal is your 'pre, pre-match meal.' Use it to fuel for the following day. Hotel buffet on Tuesday; squad choice Wed–Fri.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px;">
+        <div class="info-box">
+          <h3>Build Your Plate</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:var(--navy);color:var(--gold);border-radius:6px;padding:4px 10px;font-size:.78rem;font-weight:700;white-space:nowrap;">CARBS</span>
+              <span style="font-size:.83rem;color:#444;">Pasta, rice, potatoes, bread, noodles, couscous — replenish energy & fuel for tomorrow</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:var(--navy);color:var(--gold);border-radius:6px;padding:4px 10px;font-size:.78rem;font-weight:700;white-space:nowrap;">PROTEIN</span>
+              <span style="font-size:.83rem;color:#444;">Chicken, turkey, fish, eggs, lean beef, tofu, beans, lentils — support muscle repair</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:var(--navy);color:var(--gold);border-radius:6px;padding:4px 10px;font-size:.78rem;font-weight:700;white-space:nowrap;">VEG</span>
+              <span style="font-size:.83rem;color:#444;">Boiled, steamed or grilled — support health, immunity & recovery</span>
+            </div>
+            <div style="display:flex;gap:12px;align-items:flex-start;">
+              <span style="background:var(--navy);color:var(--gold);border-radius:6px;padding:4px 10px;font-size:.78rem;font-weight:700;white-space:nowrap;">FLUIDS</span>
+              <span style="font-size:.83rem;color:#444;">Water, squash, fruit juice, smoothie — sip throughout your meal</span>
+            </div>
+          </div>
+          <div style="background:#fff3cd;border-left:3px solid #ffc107;padding:8px 12px;margin-top:14px;border-radius:0 4px 4px 0;font-size:.8rem;color:#555;">
+            ⚠️ Avoid fried foods and overly creamy sauces — they slow digestion and sit heavy before competition.
+          </div>
+        </div>
+        <div class="info-box">
+          <h3>Restaurant Type Guide</h3>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="border-bottom:1px solid var(--border);padding-bottom:8px;">
+              <div style="font-weight:700;font-size:.83rem;color:var(--navy);">🍕 Italian</div>
+              <div style="font-size:.8rem;color:#555;">Pasta with tomato-based sauce + chicken / fish / eggplant / lentils. Thin-based pizza + protein topping.</div>
+            </div>
+            <div style="border-bottom:1px solid var(--border);padding-bottom:8px;">
+              <div style="font-weight:700;font-size:.83rem;color:var(--navy);">🥐 French / Brasserie</div>
+              <div style="font-size:.8rem;color:#555;">Protein + potatoes or rice + veg — straightforward and widely available in Vichy.</div>
+            </div>
+            <div style="border-bottom:1px solid var(--border);padding-bottom:8px;">
+              <div style="font-weight:700;font-size:.83rem;color:var(--navy);">🍜 Asian</div>
+              <div style="font-size:.8rem;color:#555;">Rice or noodle dish + protein. Avoid overly spicy options.</div>
+            </div>
+            <div style="border-bottom:1px solid var(--border);padding-bottom:8px;">
+              <div style="font-weight:700;font-size:.83rem;color:var(--navy);">🌮 Mexican-style</div>
+              <div style="font-size:.8rem;color:#555;">Burrito / rice bowl + side. Avoid very spicy dishes.</div>
+            </div>
+            <div>
+              <div style="font-weight:700;font-size:.83rem;color:var(--navy);">🍔 Burger Restaurant</div>
+              <div style="font-size:.8rem;color:#555;">Grilled burger + carb-based side + salad.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HOTEL TUESDAY -->
+      <div class="info-box" style="margin-bottom:16px;">
+        <h3>🏨 Tuesday Hotel Buffet — Ideal Menu</h3>
+        <p style="font-size:.82rem;color:#666;margin-bottom:12px;">Buffet style, clearly labelled. Water and juice on each table. <em>Subject to cost and hotel agreement — guidance to be confirmed with hotel.</em></p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;">
+          <div>
+            <p style="font-size:.75rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Proteins</p>
+            <ul style="padding-left:14px;font-size:.82rem;color:#444;line-height:1.8;"><li>Grilled butterfly chicken breast</li><li>Grilled sea bass</li><li>Grilled tofu (vg) <em>*</em></li></ul>
+          </div>
+          <div>
+            <p style="font-size:.75rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Carbs</p>
+            <ul style="padding-left:14px;font-size:.82rem;color:#444;line-height:1.8;"><li>Potato wedges</li><li>Penne pasta</li></ul>
+          </div>
+          <div>
+            <p style="font-size:.75rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Vegetables</p>
+            <ul style="padding-left:14px;font-size:.82rem;color:#444;line-height:1.8;"><li>Roasted mixed veg</li><li>Fine green beans</li></ul>
+          </div>
+          <div>
+            <p style="font-size:.75rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Salad Bar</p>
+            <p style="font-size:.8rem;color:#444;line-height:1.7;">Red onion · Mixed peppers · Cucumber · Cherry tomatoes · Avocado · Sun-dried tomatoes · Boiled eggs · Gherkins · Rocket · Baby spinach</p>
+          </div>
+          <div>
+            <p style="font-size:.75rem;font-weight:700;color:var(--teal);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;">Sauces (non-plant & vg)</p>
+            <ul style="padding-left:14px;font-size:.82rem;color:#444;line-height:1.8;"><li>Tomato & basil</li><li>Mushroom sauce</li></ul>
+          </div>
+        </div>
+        <p style="font-size:.78rem;color:#888;margin-top:10px;font-style:italic;">* Tofu provision subject to confirmation from vegan athletes.</p>
+      </div>
+
+      <!-- RESTAURANT OPTIONS -->
+      <div class="info-box">
+        <h3>📍 Scouted Restaurants in Vichy (Wed–Fri)</h3>
+        <p style="font-size:.8rem;color:#666;margin-bottom:14px;">Based on online research and menu scouting. Verify locally — details may differ on arrival.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;">
+          <div style="background:#f8fafd;border-radius:6px;padding:14px;border:1px solid var(--border);">
+            <div style="font-weight:700;color:var(--navy);font-size:.88rem;">Le Chill 🍕🍔</div>
+            <div style="font-size:.78rem;color:var(--teal);margin:3px 0;">Pizza · Burgers · Salads</div>
+            <div style="font-size:.78rem;color:#555;">Quai d'Allier, Vichy · ~20–30€ pp</div>
+            <div style="font-size:.78rem;color:#888;margin-top:4px;">17 min walk from Aletti Palace · 14 min from Celestins</div>
+          </div>
+          <div style="background:#f8fafd;border-radius:6px;padding:14px;border:1px solid var(--border);">
+            <div style="font-weight:700;color:var(--navy);font-size:.88rem;">La San Remo 🍝</div>
+            <div style="font-size:.78rem;color:var(--teal);margin:3px 0;">Italian</div>
+            <div style="font-size:.78rem;color:#555;">2 Av. du Président Doumer · ~20–30€ pp</div>
+            <div style="font-size:.78rem;color:#888;margin-top:4px;">5 min from Aletti · 9 min from Celestins · Open Wed & Fri from 7pm</div>
+          </div>
+          <div style="background:#f8fafd;border-radius:6px;padding:14px;border:1px solid var(--border);">
+            <div style="font-weight:700;color:var(--navy);font-size:.88rem;">Mio Taqueria 🌮</div>
+            <div style="font-size:.78rem;color:var(--teal);margin:3px 0;">Mexican</div>
+            <div style="font-size:.78rem;color:#555;">8 Rue Sornin · ~10–30€ pp</div>
+            <div style="font-size:.78rem;color:#888;margin-top:4px;">7 min from Aletti · 6 min from Celestins · Wed–Thu from 7pm · Fri from 6pm</div>
+          </div>
+          <div style="background:#f8fafd;border-radius:6px;padding:14px;border:1px solid var(--border);">
+            <div style="font-weight:700;color:var(--navy);font-size:.88rem;">Le Morny 🍕🥗</div>
+            <div style="font-size:.78rem;color:var(--teal);margin:3px 0;">Pizza · Pasta · Burgers · Salads</div>
+            <div style="font-size:.78rem;color:#555;">34 Rue Lucas · ~20–30€ pp</div>
+            <div style="font-size:.78rem;color:#888;margin-top:4px;">8 min from Aletti · 7 min from Celestins · Wed–Fri 8:30am–8:30pm</div>
+          </div>
+          <div style="background:#f8fafd;border-radius:6px;padding:14px;border:1px solid var(--border);">
+            <div style="font-weight:700;color:var(--navy);font-size:.88rem;">The Night Owl 🥩</div>
+            <div style="font-size:.78rem;color:var(--teal);margin:3px 0;">Grilled Meats · Pasta</div>
+            <div style="font-size:.78rem;color:#555;">7 Pl. de la Source de l'Hôpital · ~20–30€ pp</div>
+            <div style="font-size:.78rem;color:#888;margin-top:4px;">3 min from Aletti Palace · 7 min from Celestins</div>
+          </div>
+        </div>
+        <p style="font-size:.78rem;color:var(--teal);margin-top:12px;">💡 Use Google Maps to search for additional options by cuisine type in Vichy town centre.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- NUTRITION -->
+<div id="nutrition" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Nutrition &amp; Fuelling</h2><p>Performance nutrition guidance for ETC 2026 — prepared by the England Touch Nutrition Team</p></div>
+
+    <div class="nutr-intro">
+      <div class="nutr-intro-icon">🥗</div>
+      <div>
+        <h3>Fuel to Perform</h3>
+        <p>What you eat and drink before, during, and after matches directly impacts your performance and recovery. This guidance will help you make the right choices throughout tournament days in Vichy. Individual athlete guidance will be issued by the Nutrition Team once tournament fixtures are confirmed.</p>
+      </div>
+    </div>
+
+    <div class="nutr-tabs">
+      <button class="nutr-tab active" onclick="showNutrTab('breakfast',this)">☀️ Breakfast</button>
+      <button class="nutr-tab" onclick="showNutrTab('lunch',this)">🥙 Lunch</button>
+      <button class="nutr-tab" onclick="showNutrTab('snacks',this)">⚡ Snacks</button>
+      <button class="nutr-tab" onclick="showNutrTab('evening',this)">🍽️ Evening Meals</button>
+    </div>
+
+    <!-- BREAKFAST TAB -->
+    <div id="nutr-breakfast" class="nutr-panel active">
+      <p style="color:#555;font-size:.88rem;margin-bottom:18px;">On tournament mornings, prioritise starchy carbohydrates to maximise muscle glycogen stores. Select <strong>1–2 items</strong> from each category below.</p>
+      <div class="nutr-grid">
+        <div class="nutr-card">
+          <div class="nutr-card-header"><span>🌾</span><h4>Carbohydrate Base — Choose 1–2</h4></div>
+          <table>
+            <tr><th>Food</th><th>Serving</th><th style="text-align:right;">Carbs</th></tr>
+            <tr><td>Porridge pot / x2 sachets</td><td style="color:#888;font-size:.78rem;">1 pot</td><td class="carb-val">36–37g</td></tr>
+            <tr><td>Bagel</td><td style="color:#888;font-size:.78rem;">x1</td><td class="carb-val">40–50g</td></tr>
+            <tr><td>Weetabix / similar</td><td style="color:#888;font-size:.78rem;">x3 biscuits</td><td class="carb-val">39g</td></tr>
+            <tr><td>Pancakes</td><td style="color:#888;font-size:.78rem;">x2</td><td class="carb-val">25–30g</td></tr>
+            <tr><td>Cornflakes / Rice Crispies</td><td style="color:#888;font-size:.78rem;">40g pack</td><td class="carb-val">25g</td></tr>
+            <tr><td>Rice pudding</td><td style="color:#888;font-size:.78rem;">150–200g pot</td><td class="carb-val">25–35g</td></tr>
+            <tr><td>Brioche (non-chocolate)</td><td style="color:#888;font-size:.78rem;">x1</td><td class="carb-val">15–20g</td></tr>
+          </table>
+        </div>
+        <div class="nutr-card">
+          <div class="nutr-card-header"><span>🍯</span><h4>Condiment — Choose 1</h4></div>
+          <table>
+            <tr><th>Option</th><th>Serving</th><th style="text-align:right;">Carbs</th></tr>
+            <tr><td>Squeezy honey</td><td style="color:#888;font-size:.78rem;">2 tsp</td><td class="carb-val">11g</td></tr>
+            <tr><td>Maple syrup</td><td style="color:#888;font-size:.78rem;">2 tsp</td><td class="carb-val">10g</td></tr>
+            <tr><td>Fruit jam</td><td style="color:#888;font-size:.78rem;">2 tsp</td><td class="carb-val">9g</td></tr>
+            <tr><td>Marmalade</td><td style="color:#888;font-size:.78rem;">2 tsp</td><td class="carb-val">9g</td></tr>
+          </table>
+          <div style="padding:0 14px 14px;">
+            <div class="nutr-card-header" style="margin:0 -14px 10px;background:var(--teal);"><span>🍌</span><h4>Fruit — Choose 1</h4></div>
+            <table>
+              <tr><th>Option</th><th style="text-align:right;">Carbs</th></tr>
+              <tr><td>Banana (medium)</td><td class="carb-val">25–30g</td></tr>
+              <tr><td>Raisins / Dates / Dried mango</td><td class="carb-val">20–30g</td></tr>
+              <tr><td>Apple / Grapes / Apricots</td><td class="carb-val">15–20g</td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="nutr-card">
+          <div class="nutr-card-header"><span>🥤</span><h4>Fluid-Based Carbs</h4></div>
+          <table>
+            <tr><th>Drink</th><th>Serving</th><th style="text-align:right;">Carbs</th></tr>
+            <tr><td>Fruit smoothie</td><td style="color:#888;font-size:.78rem;">250ml</td><td class="carb-val">25–40g</td></tr>
+            <tr><td>Orange / Apple / Pineapple juice</td><td style="color:#888;font-size:.78rem;">250ml</td><td class="carb-val">25–30g</td></tr>
+          </table>
+          <div class="nutr-note" style="margin:12px;"><strong>Note:</strong> Opt for juices from concentrate (lower fibre = easier digestion). Always pair with solid food — do not rely on fluids alone.</div>
+        </div>
+      </div>
+      <div class="nutr-note">💡 <strong>Struggling with solid food in the morning?</strong> Athletes who find early eating difficult can use the fruit selection as a pre-match snack before their first touch-off.</div>
+    </div>
+
+    <!-- LUNCH TAB -->
+    <div id="nutr-lunch" class="nutr-panel">
+      <p style="color:#555;font-size:.88rem;margin-bottom:18px;">Wherever possible, aim for a small full meal between matches rather than relying on snacks alone. Build your own or go pre-packed.</p>
+      <div class="nutr-grid">
+        <div class="nutr-card">
+          <div class="nutr-card-header"><span>🥖</span><h4>Build Your Own — Carbs (1–2)</h4></div>
+          <table>
+            <tr><th>Base</th><th style="text-align:right;">Carbs</th></tr>
+            <tr><td>White baguette (100g)</td><td class="carb-val">45–55g</td></tr>
+            <tr><td>White bagel</td><td class="carb-val">40–50g</td></tr>
+            <tr><td>White pitta (large)</td><td class="carb-val">35–45g</td></tr>
+            <tr><td>White tortilla wrap</td><td class="carb-val">30–35g</td></tr>
+            <tr><td>White sliced bread (x2)</td><td class="carb-val">30–40g</td></tr>
+            <tr><td>White flatbread</td><td class="carb-val">25–30g</td></tr>
+          </table>
+        </div>
+        <div class="nutr-card">
+          <div class="nutr-card-header"><span>🍗</span><h4>Protein Filling — Choose 1</h4></div>
+          <table>
+            <tr><th>Option</th><th style="text-align:right;">Protein</th></tr>
+            <tr><td>Chicken / Turkey breast slices</td><td class="carb-val">18–30g</td></tr>
+            <tr><td>Ham slices</td><td class="carb-val">18–22g</td></tr>
+            <tr><td>Tuna (half to 1 tin)</td><td class="carb-val">15–30g</td></tr>
+            <tr><td>Tofu slices 🌱</td><td class="carb-val">15–20g</td></tr>
+            <tr><td>Vegan chicken 🌱</td><td class="carb-val">12–18g</td></tr>
+            <tr><td>Falafel 🌱</td><td class="carb-val">10–15g</td></tr>
+            <tr><td>Boiled eggs (x2)</td><td class="carb-val">12–14g</td></tr>
+            <tr><td>Houmous 🌱 / Peanut butter 🌱</td><td class="carb-val">4–8g</td></tr>
+          </table>
+        </div>
+        <div class="nutr-card">
+          <div class="nutr-card-header"><span>🛒</span><h4>Pre-Packed Options</h4></div>
+          <div style="padding:14px;">
+            <div class="meal-row"><span class="meal-label">Pasta pots</span><span class="meal-opts">White pasta + lean protein. Avoid heavy cream sauces.</span></div>
+            <div class="meal-row"><span class="meal-label">Sandwiches</span><span class="meal-opts">Avoid high-fat dressings (e.g. Caesar) — slows digestion.</span></div>
+            <div class="meal-row"><span class="meal-label">Sushi packs</span><span class="meal-opts">Great for athletes with a lower appetite between matches.</span></div>
+            <div class="meal-row"><span class="meal-label">Salad add-on</span><span class="meal-opts">Lettuce, spinach, or rocket alongside any of the above.</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SNACKS TAB -->
+    <div id="nutr-snacks" class="nutr-panel">
+      <p style="color:#555;font-size:.88rem;margin-bottom:18px;">Use fuelling snacks before and between matches to maintain energy. Recovery snacks should follow as soon as possible after your final match of the day.</p>
+      <div class="snack-cols">
+        <div class="nutr-card">
+          <div class="nutr-card-header"><span>⚡</span><h4>Fuelling Snacks</h4></div>
+          <table>
+            <tr><th>Snack</th><th style="text-align:right;">Carbs</th></tr>
+            <tr><td>Fruit-based flapjack</td><td class="carb-val">35–45g</td></tr>
+            <tr><td>Banana (medium)</td><td class="carb-val">25–30g</td></tr>
+            <tr><td>Raisins / Dates / Dried mango</td><td class="carb-val">20–30g</td></tr>
+            <tr><td>Cereal bar (Nature Valley / similar)</td><td class="carb-val">20–21g</td></tr>
+            <tr><td>Apple / Grapes / Apricots</td><td class="carb-val">15–20g</td></tr>
+            <tr><td>Rice cakes (x3)</td><td class="carb-val">10–15g</td></tr>
+            <tr><td>Sports drink (250ml)</td><td class="carb-val">15g</td></tr>
+          </table>
+        </div>
+        <div class="nutr-card">
+          <div class="nutr-card-header" style="background:var(--teal);"><span>💪</span><h4>Recovery Snacks</h4></div>
+          <table>
+            <tr><th>Snack</th><th style="text-align:right;">Protein</th></tr>
+            <tr><td>Protein yoghurt</td><td class="carb-val">20–30g</td></tr>
+            <tr><td>Protein bar</td><td class="carb-val">20–30g</td></tr>
+            <tr><td>Boiled eggs (x2)</td><td class="carb-val">12–14g</td></tr>
+            <tr><td>Greek yoghurt + fruit</td><td class="carb-val">6–7g</td></tr>
+            <tr><td>Chocolate milk (250ml)</td><td class="carb-val">8g + 22g carbs</td></tr>
+          </table>
+        </div>
+      </div>
+      <div class="nutr-note">💡 <strong>Exact brands may not be available in Vichy</strong> — French supermarket equivalents will be readily available. Check with your Tour Manager for the nearest supermarket to your hotel.</div>
+    </div>
+
+    <!-- EVENING MEALS TAB -->
+    <div id="nutr-evening" class="nutr-panel">
+      <p style="color:#555;font-size:.88rem;margin-bottom:18px;">Your evening meal is your <em>pre, pre-match meal</em> — use it to replenish today and fuel for tomorrow.</p>
+
+      <div class="nutr-principle-grid">
+        <div class="nutr-principle"><div class="icon">🍝</div><div><h5>Prioritise Carbs</h5><p>Pasta, rice, potatoes, bread, noodles or couscous to replenish energy stores.</p></div></div>
+        <div class="nutr-principle"><div class="icon">🍗</div><div><h5>Include Protein</h5><p>Chicken, turkey, fish, eggs, lean beef, tofu, beans or lentils for muscle repair.</p></div></div>
+        <div class="nutr-principle"><div class="icon">🥦</div><div><h5>Add Veg</h5><p>Boiled, steamed or grilled where possible. Add starchy veg for extra carbs.</p></div></div>
+        <div class="nutr-principle"><div class="icon">💧</div><div><h5>Rehydrate</h5><p>Sip water, squash or juice throughout your meal to maintain hydration.</p></div></div>
+        <div class="nutr-principle"><div class="icon">🚫</div><div><h5>Avoid Heavy Fats</h5><p>Skip fried foods and creamy sauces — they slow digestion and can feel heavy.</p></div></div>
+        <div class="nutr-principle"><div class="icon">🍽️</div><div><h5>Eat Enough</h5><p>A side salad will not cut it after a full tournament day. Make it a proper meal.</p></div></div>
+      </div>
+
+      <div class="section-header" style="margin-top:28px;"><h2 style="font-size:1.2rem;">Recommended Restaurants in Vichy</h2></div>
+      <div class="restaurant-list">
+        <div class="restaurant-item">
+          <div class="rest-type">🍕 Pizza · Burgers · Salads</div>
+          <h4>Le Chill</h4>
+          <p>Quai d'Allier, 03200 Vichy<br>€20–30 pp · 17 min walk from Aletti Palace · 14 min from Celestins</p>
+        </div>
+        <div class="restaurant-item">
+          <div class="rest-type">🍝 Italian</div>
+          <h4>La San Remo</h4>
+          <p>2 Av. du Président Doumer, 03200 Vichy<br>€20–30 pp · 5 min from Aletti · 9 min from Celestins<br><strong>Open:</strong> Wed &amp; Fri eve from 7pm</p>
+        </div>
+        <div class="restaurant-item">
+          <div class="rest-type">🌮 Mexican</div>
+          <h4>Mio Taqueria</h4>
+          <p>8 Rue Sornin, 03200 Vichy<br>€10–30 pp · 7 min from Aletti · 6 min from Celestins<br><strong>Open:</strong> Wed–Thu from 7pm · Fri from 6pm</p>
+        </div>
+        <div class="restaurant-item">
+          <div class="rest-type">🍕 Pizza · Pasta · Burgers</div>
+          <h4>Le Morny</h4>
+          <p>34 Rue Lucas, 03200 Vichy<br>€20–30 pp · 8 min from Aletti · 7 min from Celestins<br><strong>Open:</strong> Wed–Fri 8:30am–8:30pm</p>
+        </div>
+        <div class="restaurant-item">
+          <div class="rest-type">🥩 Grilled Meats · Pasta</div>
+          <h4>The Night Owl</h4>
+          <p>7 Pl. de la Source de l'Hôpital, 03200 Vichy<br>€20–30 pp · 3 min from Aletti · 7 min from Celestins</p>
+        </div>
+      </div>
+      <div class="nutr-note">💡 <strong>Not seeing what you want?</strong> Search Google Maps for restaurant types near your hotel. Italian, French, and Asian cuisines generally offer performance-friendly options. Avoid anything overly spicy or unfamiliar on competition evenings.</div>
+
+      <div class="info-box" style="margin-top:24px;border-left:4px solid var(--teal);background:#e8f7fa;">
+        <h3>Tuesday Evening — Hotel Buffet Dinner</h3>
+        <p style="font-size:.85rem;color:#555;margin-bottom:14px;">The hotel will provide a buffet-style dinner on Tuesday evening. All items clearly labelled. Water and juice available at each table.</p>
+        <div class="meal-builder">
+          <h4>Buffet Menu</h4>
+          <div class="meal-row"><span class="meal-label">Protein</span><span class="meal-opts">Grilled butterfly chicken breast · Grilled sea bass · Grilled tofu</span></div>
+          <div class="meal-row"><span class="meal-label">Sides</span><span class="meal-opts">Potato wedges · Penne pasta</span></div>
+          <div class="meal-row"><span class="meal-label">Vegetables</span><span class="meal-opts">Roasted mixed veg · Fine green beans</span></div>
+          <div class="meal-row"><span class="meal-label">Sauces</span><span class="meal-opts">Tomato &amp; basil · Mushroom sauce (plant-based options for each)</span></div>
+          <div class="meal-row"><span class="meal-label">Salad bar</span><span class="meal-opts">Red onion · mixed peppers · cucumber · cherry tomatoes · avocado · sun-dried tomatoes · boiled eggs · rocket · baby spinach</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- REGISTRATION -->
+<div id="registration" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Athlete Registration</h2><p>All athletes must complete their registration through the FIT website</p></div>
+    <div class="info-box"><h3>Registration Link</h3><p>Register here: <a href="https://www.internationaltouch.org/events/registration/38/" target="_blank" style="color:var(--teal);font-weight:600;">https://www.internationaltouch.org/events/registration/38/</a></p></div>
+    <div class="info-box"><h3>Step-by-Step Registration</h3>
+      <ol style="padding-left:20px;font-size:.9rem;color:#444;line-height:2.2;">
+        <li>Go to <a href="https://www.internationaltouch.org/" target="_blank" style="color:var(--teal);">www.internationaltouch.org</a></li>
+        <li>Click <strong>"EVENTS"</strong> → <strong>"Registration"</strong></li>
+        <li>Click <strong>"European Touch Championships 2026"</strong></li>
+        <li>Select your squad → Select <strong>"England"</strong> → Click <strong>"Join this team"</strong></li>
+        <li>Click <strong>"Individual Login"</strong></li>
+        <li>If you have represented England previously, login with existing credentials. If forgotten password — <strong>DO NOT create another account</strong>, request a password reset.</li>
+        <li>If never represented England at a FIT Tournament, click <strong>"Signup"</strong></li>
+        <li>Select your name, select appropriate role: <strong>"Player"</strong> or <strong>"Non-Player"</strong></li>
+        <li>Tick acknowledgement boxes, select your role, insert playing number if an athlete</li>
+        <li>Click <strong>"Submit"</strong></li>
+      </ol>
+    </div>
+  </div>
+</div>
+
+<!-- ELIGIBILITY -->
+<div id="eligibility" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Athlete Eligibility &amp; Documentation</h2><p>Who can play for England?</p></div>
+    <div class="info-box"><h3>Qualifying Routes</h3><ul class="checklist"><li><strong>Born in England</strong> — your country of birth is your primary qualification.</li><li><strong>Parent born in England</strong> — either biological parent, or a legal adoptive parent, was born in England.</li><li><strong>Grandparent born in England</strong> — either biological grandparent was born in England.</li><li><strong>Residency</strong> — minimum two years' continuous residency immediately prior to the event.</li></ul></div>
+    <div class="info-box"><h3>Documentation Required</h3>
+      <table class="data-table">
+        <tr><th>Route</th><th>Documents Needed</th></tr>
+        <tr><td><strong>Born in England</strong></td><td>Birth certificate and/or valid passport showing place of birth</td></tr>
+        <tr><td><strong>Parent born in England</strong></td><td>Player's birth certificate + parent's birth certificate or passport</td></tr>
+        <tr><td><strong>Grandparent born in England</strong></td><td>Player's + parent's + grandparent's birth certificate or passport</td></tr>
+        <tr><td><strong>Residency (2 years)</strong></td><td>Utility bills, tenancy agreements, employment records, GP registration</td></tr>
+      </table>
+    </div>
+    <div class="info-box"><h3>Age Criteria</h3><p>For age-group divisions, the cut-off date is <strong>31 December 2025</strong>. For Opens divisions, athletes must be over 16 on the day of the tournament.</p></div>
+    <div class="info-box"><h3>Additional England Touch Requirements</h3><ul class="checklist"><li>Valid England Touch Association (ETA) membership</li><li>Play at an affiliated club or league</li><li>Zero outstanding financial balance with the ETA (or previously agreed arrangement)</li><li>Attend national training sessions as required</li></ul></div>
+  </div>
+</div>
+
+<!-- PASSPORTS -->
+<div id="passports" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Passports &amp; Travel</h2><p>Essential reading — check your passport well before departure</p></div>
+    <div class="info-box" style="border-left:4px solid #dc3545;background:#fff5f5;"><h3>⚠️ Passport Validity — British Passport Holders</h3><p>France follows Schengen area rules. <strong>Your passport must have a date of issue less than 10 years before the date you arrive, and an expiry date at least 3 months after the date you plan to leave the Schengen area.</strong></p><div class="warning" style="margin-top:12px;"><strong>Quick check:</strong> "Date of Issue" — if it says anything before July 2016, it will not be accepted. "Expiry Date" — must show a date after <strong>26 October 2026</strong>.</div></div>
+    <div class="info-box"><h3>EU Entry/Exit System (EES)</h3><p>EES has been fully operational since <strong>10 April 2026</strong> — in full effect when we travel to Vichy. EES replaces manual passport stamping; you may need to register biometric details (fingerprints and a photo) on your first Schengen entry. No action needed before the border. Your digital EES record is valid for 3 years.</p></div>
+    <div class="info-box"><h3>At the Border — What to Have Ready</h3><ul class="checklist"><li>Your valid passport</li><li>Proof of travel insurance covering emergency medical costs</li><li>Tournament/tour information (hotel booking confirmation or team manager's contact details)</li><li>Evidence of a return journey</li></ul></div>
+    <div class="info-box"><h3>Non-British Passport Holders</h3><p>Some nationalities require a Schengen visa regardless of UK residency status. Non-British citizens should check the French Embassy website or contact the England Touch logistics team as early as possible.</p><div class="important">Contact: <a href="mailto:logistics@englandtouch.org.uk">logistics@englandtouch.org.uk</a></div></div>
+  </div>
+</div>
+
+<!-- GETTING THERE -->
+<div id="getting-there" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Getting to and from the Venue</h2></div>
+    <div class="info-box" style="border-left:4px solid var(--teal);"><h3>🚌 Coach Transport — Use It</h3><p>England Touch will arrange <strong>dedicated coach transport</strong> to and from the venue each day, scheduled around the playing programme.</p><ul class="checklist" style="margin-top:12px;"><li>Use the coach you have been allocated to on the days you have been allocated</li><li>Tell your team manager as early as possible if your transport plans have changed</li><li>Do not arrange your own transport and leave a booked seat empty without notice</li></ul></div>
+    <div class="info-box"><h3>If You Are Making Your Own Way</h3><p>The Parc Omnisports is roughly a <strong>5-minute drive</strong> from the town centre, served by Vichy's MobiVie bus network (lines E and I). Taxis may be in high demand on finals day.</p><div class="important">Travel queries: <a href="mailto:logistics@englandtouch.org.uk">Warren Steele — logistics@englandtouch.org.uk</a></div></div>
+  </div>
+</div>
+
+<!-- CONDUCT -->
+<div id="conduct" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Policies &amp; Codes of Conduct</h2><p>Representing England Touch is a privilege.</p></div>
+    <div class="info-box"><h3>Code of Conduct</h3><ul class="checklist"><li>Treat teammates, opponents, officials, volunteers and spectators with respect</li><li>Demonstrate good sportsmanship at all times</li><li>Follow the instructions of coaches, managers and support staff</li><li>Respect tournament venues, accommodation and facilities</li><li>Behave in a manner that reflects positively on England Touch</li></ul><div class="important"><a href="https://www.englandtouch.org.uk/media/2445/england-touch-code-of-conduct-v20.pdf" target="_blank">Download the Code of Conduct (PDF)</a></div></div>
+    <div class="info-box"><h3>Social Media Policy</h3><ul class="checklist"><li>Show respect towards teammates, opponents, officials and organisers</li><li>Avoid posting content that could damage the reputation of England Touch or the wider sport</li><li>Respect confidentiality within teams and the touring party</li><li>Consider the impact of posts, comments and images before sharing them</li></ul></div>
+    <div class="info-box"><h3>Safeguarding &amp; Player Welfare</h3><p>England Touch is committed to providing a safe, inclusive and positive environment for all participants. Any concerns relating to safeguarding, welfare, discrimination, harassment or inappropriate behaviour should be raised with appropriate team management or welfare personnel as soon as possible.</p><div class="important"><a href="https://www.englandtouch.org.uk/media/1907/210210_safeguarding-children-and-adults-at-risk-policy-sp-v70.pdf" target="_blank">Download the Safeguarding Policy (PDF)</a></div></div>
+  </div>
+</div>
+
+<!-- TOUR & PEOPLE -->
+<div id="tour-people" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Key Contacts</h2><p>England Touch tours to Vichy from Tuesday 21 to Sunday 26 July 2026</p></div>
+    <div class="info-box"><h3>Performance &amp; Programme Leadership</h3>
+      <table class="data-table">
+        <tr><th>Role</th><th>Lead</th><th>Contact</th></tr>
+        <tr><td>Head of Performance Logistics</td><td>Warren Steele</td><td><a href="mailto:logistics@englandtouch.org.uk">logistics@englandtouch.org.uk</a></td></tr>
+        <tr><td>Head of Performance Support</td><td>Cari Thorpe</td><td><a href="mailto:medical@englandtouch.org.uk">medical@englandtouch.org.uk</a></td></tr>
+        <tr><td>Head of Athlete Development</td><td>Mike Evans-Jones</td><td><a href="mailto:athlete.development@englandtouch.org.uk">athlete.development@englandtouch.org.uk</a></td></tr>
+        <tr><td>Head of Referee Development</td><td>Jack Harris</td><td><a href="mailto:referee.manager@englandtouch.org.uk">referee.manager@englandtouch.org.uk</a></td></tr>
+        <tr><td>Head of Performance Coaching</td><td>Peter Bell</td><td>Email TBC</td></tr>
+        <tr><td>Director of Pathways &amp; Performance</td><td>Sammie Phillips</td><td><a href="mailto:sammie.phillips@englandtouch.org.uk">sammie.phillips@englandtouch.org.uk</a></td></tr>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- SCHEDULE -->
+<div id="schedule" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>Event Schedule</h2><p>All timings provisional and subject to change. Games: 2 × 20-minute halves with 5-minute half-time.</p></div>
+    <div class="info-box"><div class="important" style="margin-top:0;">🔗 <a href="https://www.internationaltouch.org/events/euros/2026/" target="_blank" rel="noopener">View the Official Event Page — internationaltouch.org</a></div></div>
+    <div class="day-block"><div class="day-header">Tuesday 21 July — Arrival &amp; Opening Ceremony</div>
+      <table class="data-table"><tr><th>Time</th><th>Activity</th></tr>
+        <tr><td>12:00</td><td>Site open for access</td></tr><tr><td>13:00</td><td>Registration opens for Tour / Team Managers</td></tr>
+        <tr><td>15:30</td><td>Tour Manager briefing meeting (30 mins)</td></tr><tr><td>16:30</td><td>Main site closed</td></tr>
+        <tr><td>17:30</td><td>Meet for parade and opening ceremony (venue TBC)</td></tr><tr><td>18:00</td><td>Parade starts</td></tr>
+        <tr><td>18:30</td><td>Parade finishes; Opening Ceremony in Darragon Stadium</td></tr>
+        <tr><td>19:00</td><td>Evening food option for athletes and referees</td></tr>
+        <tr><td>19:30</td><td>Feature game(s) in Darragon Stadium</td></tr><tr><td>21:30</td><td>Stadium site closed</td></tr>
+      </table></div>
+    <div class="day-block"><div class="day-header">Wednesday 22 July — Pool Play</div>
+      <table class="data-table"><tr><th>Time</th><th>Activity</th></tr>
+        <tr><td>07:00</td><td>Site open</td></tr><tr><td>09:00</td><td>Expected first tap-off</td></tr>
+        <tr><td>18:10</td><td>Expected last tap-off</td></tr><tr><td>20:00</td><td>Site closed</td></tr></table></div>
+    <div class="day-block"><div class="day-header">Thursday 23 July — Pool Play</div>
+      <table class="data-table"><tr><th>Time</th><th>Activity</th></tr>
+        <tr><td>07:00</td><td>Site open</td></tr><tr><td>09:00</td><td>Expected first tap-off</td></tr>
+        <tr><td>18:10</td><td>Expected last tap-off</td></tr><tr><td>20:00</td><td>Site closed</td></tr></table></div>
+    <div class="day-block"><div class="day-header">Friday 24 July — Pool Play &amp; Knockouts</div>
+      <table class="data-table"><tr><th>Time</th><th>Activity</th></tr>
+        <tr><td>07:00</td><td>Site open</td></tr><tr><td>09:00</td><td>Expected first tap-off</td></tr>
+        <tr><td>18:35</td><td>Expected last tap-off</td></tr><tr><td>20:30</td><td>Site closed</td></tr></table></div>
+    <div class="day-block"><div class="day-header">Saturday 25 July — Finals Day</div>
+      <table class="data-table"><tr><th>Time</th><th>Activity</th></tr>
+        <tr><td>07:00</td><td>Site open</td></tr><tr><td>08:30</td><td>Expected first tap-off</td></tr>
+        <tr><td>17:00</td><td>Expected last tap-off</td></tr>
+        <tr><td>18:00</td><td>Final medal presentations &amp; closing ceremony</td></tr>
+        <tr><td>19:00</td><td>Site closed</td></tr><tr><td>20:00</td><td>After party (venue TBC)</td></tr></table></div>
+  </div>
+</div>
+
+<!-- SQUADS INDEX -->
+<div id="squads" class="page-section">
+  <div class="content-wrap">
+    <div class="section-header"><h2>The Squads — 14 Touring Teams</h2><p>Click any squad card to view the full page</p></div>
+    <div class="squad-filter">
+      <button class="filter-btn active" onclick="filterSquads('all',this)">All Teams</button>
+      <button class="filter-btn" onclick="filterSquads('opens',this)">Opens</button>
+      <button class="filter-btn" onclick="filterSquads('seniors',this)">Seniors</button>
+      <button class="filter-btn" onclick="filterSquads('masters',this)">Masters</button>
+    </div>
+    <div class="sq-index-grid" id="sq-index-grid"><div class="sq-index-card" data-cat="opens" onclick="showSection('squad-mens-open',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_9.jpeg');background-position:center 38%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Opens</div>
+    <div class="sq-index-name">England Men's Open</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="opens" onclick="showSection('squad-womens-open',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_10.jpeg');background-position:center 15%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Opens</div>
+    <div class="sq-index-name">England Women's Open</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="opens" onclick="showSection('squad-mixed-open',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_11.jpeg');background-position:center 30%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Opens</div>
+    <div class="sq-index-name">England Mixed Open</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="seniors" onclick="showSection('squad-womens-27s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_12.jpeg');background-position:center 10%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Seniors</div>
+    <div class="sq-index-name">England Women's 27s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="seniors" onclick="showSection('squad-mens-30s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_13.jpeg');background-position:center 12%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Seniors</div>
+    <div class="sq-index-name">England Men's 30s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="seniors" onclick="showSection('squad-mixed-30s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_14.jpeg');background-position:center 22%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Seniors</div>
+    <div class="sq-index-name">England Mixed 30s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="seniors" onclick="showSection('squad-mens-35s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_15.jpeg');background-position:center 20%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Seniors</div>
+    <div class="sq-index-name">England Men's 35s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="seniors" onclick="showSection('squad-womens-35s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_16.jpeg');background-position:center 25%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Seniors</div>
+    <div class="sq-index-name">England Women's 35s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="masters" onclick="showSection('squad-mens-40s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_17.jpeg');background-position:center 15%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Masters</div>
+    <div class="sq-index-name">England Men's 40s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="masters" onclick="showSection('squad-womens-40s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_18.jpeg');background-position:center 15%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Masters</div>
+    <div class="sq-index-name">England Women's 40s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="masters" onclick="showSection('squad-mens-45s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_19.jpeg');background-position:center 30%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Masters</div>
+    <div class="sq-index-name">England Men's 45s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="masters" onclick="showSection('squad-womens-45s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_20.jpeg');background-position:center 20%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Masters</div>
+    <div class="sq-index-name">England Women's 45s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="masters" onclick="showSection('squad-mens-50s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_21.jpeg');background-position:center 15%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Masters</div>
+    <div class="sq-index-name">England Men's 50s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div>
+<div class="sq-index-card" data-cat="masters" onclick="showSection('squad-mens-55s',null)">
+  <div class="sq-index-bg" style="background-image:url('images/img_22.jpeg');background-position:center 20%;background-size:cover;"></div>
+  <div class="sq-index-overlay"></div>
+  <div class="sq-index-text">
+    <div class="sq-index-div">Masters</div>
+    <div class="sq-index-name">England Men's 55s</div>
+    <div class="sq-index-meta">16 Players · Click to view</div>
+  </div>
+</div></div>
+  </div>
+</div>
+
+<!-- SQUAD DETAIL PAGES -->
+<div id="squad-mens-open" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_23.jpeg');background-position:center 38%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Opens Division · ETC 2026</div>
+      <h1 class="sq-title">England Men's Open</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Sebastian Conaghan</td><td class="pnum">2</td><td class="pname">Archie Devlin</td></tr><tr><td class="pnum">3</td><td class="pname">Samuel Dixon</td><td class="pnum">4</td><td class="pname">Ethan Gallagher</td></tr><tr><td class="pnum">5</td><td class="pname">Cole Graham</td><td class="pnum">6</td><td class="pname">Ben Grinter</td></tr><tr><td class="pnum">7</td><td class="pname">Josh Henderson</td><td class="pnum">8</td><td class="pname">Tom Lawton-Davies</td></tr><tr><td class="pnum">9</td><td class="pname">Augustine (Gus) McMahon</td><td class="pnum">10</td><td class="pname">Tom Penniceard</td></tr><tr><td class="pnum">11</td><td class="pname">Harry Richards</td><td class="pnum">12</td><td class="pname">Kamil Shahabdeen</td></tr><tr><td class="pnum">13</td><td class="pname">Oliver Simon</td><td class="pnum">14</td><td class="pname">Louis Treays</td></tr><tr><td class="pnum">15</td><td class="pname">Will Tyrrell</td><td class="pnum">16</td><td class="pname">Vaughn Meredith</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Vaughn Meredith</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Mark Aldous</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Tomos Hardiman</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Ben Robertson</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Rebecca Hickman</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Six-team single division, full round-robin (10 rounds, 10 matches). At least 11 games.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">France</span><span class="opp-tag">Ireland</span><span class="opp-tag">Scotland</span><span class="opp-tag">Spain</span><span class="opp-tag">Wales</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">5th v 6th play-off, then Bronze and Gold Medal Matches</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-womens-open" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_24.jpeg');background-position:center 15%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Opens Division · ETC 2026</div>
+      <h1 class="sq-title">England Women's Open</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Carly Brimelow</td><td class="pnum">2</td><td class="pname">Anna Crossley</td></tr><tr><td class="pnum">3</td><td class="pname">Lauren Fagan</td><td class="pnum">4</td><td class="pname">Naomi Fearnett</td></tr><tr><td class="pnum">5</td><td class="pname">Millie Hely-Hammond</td><td class="pnum">6</td><td class="pname">Elea Huguet</td></tr><tr><td class="pnum">7</td><td class="pname">Emily Irons</td><td class="pnum">8</td><td class="pname">Sophia Jelfs</td></tr><tr><td class="pnum">9</td><td class="pname">Sophie Lloyd</td><td class="pnum">10</td><td class="pname">Ella Loveridge</td></tr><tr><td class="pnum">11</td><td class="pname">Emily Rona-Roper</td><td class="pnum">12</td><td class="pname">Phoebe Simon</td></tr><tr><td class="pnum">13</td><td class="pname">Emily Simon</td><td class="pnum">14</td><td class="pname">Alice Summers</td></tr><tr><td class="pnum">15</td><td class="pname">Mimi Taylor-Dean</td><td class="pnum">16</td><td class="pname">Abigail (Abby) Wolfe</td></tr></tbody></table>
+          
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Martin Wright</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Dan Powell</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Sadi Musson</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Matt Chapman</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Hanna Gildam-Clark</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Five-team division (10 rounds, 8 matches, 2 byes). England plays up to 9 games.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">France</span><span class="opp-tag">Ireland</span><span class="opp-tag">Scotland</span><span class="opp-tag">EuroSelect (guest)</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Bronze and Gold Medal Matches</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-mixed-open" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_25.jpeg');background-position:center 30%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Opens Division · ETC 2026</div>
+      <h1 class="sq-title">England Mixed Open</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Sophia Barkham</td><td class="pnum">2</td><td class="pname">Cara Edwards</td></tr><tr><td class="pnum">3</td><td class="pname">Lily Merrett</td><td class="pnum">4</td><td class="pname">Grace Pyrgos</td></tr><tr><td class="pnum">5</td><td class="pname">Heather Richardson</td><td class="pnum">6</td><td class="pname">Lydia Ticehurst</td></tr><tr><td class="pnum">7</td><td class="pname">Will Coomes</td><td class="pnum">8</td><td class="pname">Harrison Cross</td></tr><tr><td class="pnum">9</td><td class="pname">Anushan Elanco</td><td class="pnum">10</td><td class="pname">James Faye</td></tr><tr><td class="pnum">11</td><td class="pname">Ben Le Noury</td><td class="pnum">12</td><td class="pname">Jake Morris</td></tr><tr><td class="pnum">13</td><td class="pname">Max Penniceard</td><td class="pnum">14</td><td class="pname">Russell Reid</td></tr><tr><td class="pnum">15</td><td class="pname">Will Stockdale</td><td class="pnum">16</td><td class="pname">Samuel Thorpe</td></tr></tbody></table>
+          
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Tim Osborne</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Josh Bendel</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Kathryn Mellor</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Stephanie Tibbert</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">13-team competition, two pools. England in Pool A (7 rounds, 6 matches, 1 bye). 9–11 games total. Teams are; England, Wales, France, Italy, Germany, Cayman Islands, Portugal, Scotland, Jersey, Belgium, Ireland, Switzerland and Netherlands</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Pool Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">Scotland</span><span class="opp-tag">Jersey</span><span class="opp-tag">Belgium</span><span class="opp-tag">Ireland</span><span class="opp-tag">Switzerland</span><span class="opp-tag">Netherlands</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Top four in each pool reach Quarter Finals; winners advance toward Semi Finals, Bronze and Gold</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-womens-27s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_26.jpeg');background-position:center 10%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Seniors Division · ETC 2026</div>
+      <h1 class="sq-title">England Women's 27s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Kate Allen</td><td class="pnum">2</td><td class="pname">Sage Bannister</td></tr><tr><td class="pnum">3</td><td class="pname">Niki Bird</td><td class="pnum">4</td><td class="pname">Kendall Buckingham</td></tr><tr><td class="pnum">5</td><td class="pname">Jess Clarke</td><td class="pnum">6</td><td class="pname">Jamie Cone</td></tr><tr><td class="pnum">7</td><td class="pname">Jo Devine</td><td class="pnum">8</td><td class="pname">Eleana Ennes</td></tr><tr><td class="pnum">9</td><td class="pname">Zoe Fielden Stewart</td><td class="pnum">10</td><td class="pname">Anna Goddard</td></tr><tr><td class="pnum">11</td><td class="pname">Rebecca Hill</td><td class="pnum">12</td><td class="pname">Nicky Marsh</td></tr><tr><td class="pnum">13</td><td class="pname">Daniela Mendes</td><td class="pnum">14</td><td class="pname">Jess Miller</td></tr><tr><td class="pnum">15</td><td class="pname">Meghan Pemberton</td><td class="pnum">16</td><td class="pname">Lucy Snape</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Rafaelle Baby, Rachel Bateman, Kathryn Williams-Sharp</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Ben Powell</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Ed Budge</td></tr><tr><td class="srole">Team Manager</td><td class="sname">TBC</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Rich Dean</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Six-team single division, full round-robin (10 rounds, 10 matches). 11 games each.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">Belgium</span><span class="opp-tag">France</span><span class="opp-tag">Portugal</span><span class="opp-tag">Scotland</span><span class="opp-tag">Spain</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">5th v 6th play-off, then Bronze and Gold Medal Matches</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-mens-30s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_27.jpeg');background-position:center 12%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Seniors Division · ETC 2026</div>
+      <h1 class="sq-title">England Men's 30s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Adam Sale</td><td class="pnum">2</td><td class="pname">Andy Dyer</td></tr><tr><td class="pnum">3</td><td class="pname">Ben Meakin</td><td class="pnum">4</td><td class="pname">Brent McDougall</td></tr><tr><td class="pnum">5</td><td class="pname">Clark Hobson</td><td class="pnum">6</td><td class="pname">Dominic Brook</td></tr><tr><td class="pnum">7</td><td class="pname">Gabriel Pennington</td><td class="pnum">8</td><td class="pname">Gus Gillespie</td></tr><tr><td class="pnum">9</td><td class="pname">Jacob Whitehead</td><td class="pnum">10</td><td class="pname">Jon Weston-Stanley</td></tr><tr><td class="pnum">11</td><td class="pname">Joshua Ingram</td><td class="pnum">12</td><td class="pname">Liam Clark</td></tr><tr><td class="pnum">13</td><td class="pname">Ryan Miemczyk</td><td class="pnum">14</td><td class="pname">Thomas Davies</td></tr><tr><td class="pnum">15</td><td class="pname">Tom Smith</td><td class="pnum">16</td><td class="pname">Will Serocold</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Will Bamber, Josh Bendel, Lewis Partridge, Mike Rice, Harry Wilkinson, Jordan Melling, Hanro Rossouw</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Gareth Revell</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Max Shepstone</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Will Bamber</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Scott Gunning</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Combined Men's 30/35 group. England M30 plays all 7 other M30 nations plus one M35 cross-over. Up to 10 games.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">Belgium M30</span><span class="opp-tag">Ireland M30</span><span class="opp-tag">Scotland M30</span><span class="opp-tag">France M30</span><span class="opp-tag">Wales M30</span><span class="opp-tag">Italy M30</span><span class="opp-tag">Portugal M30</span><span class="opp-tag">+ 1 M35 cross-over</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Placings across M30 standings: 7th/8th and 5th/6th play-offs, Bronze and Gold</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-mixed-30s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_28.jpeg');background-position:center 22%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Seniors Division · ETC 2026</div>
+      <h1 class="sq-title">England Mixed 30s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Georgia Blessed</td><td class="pnum">2</td><td class="pname">Meghan Clayton</td></tr><tr><td class="pnum">3</td><td class="pname">Emily Moore</td><td class="pnum">4</td><td class="pname">Peggy Mulligan</td></tr><tr><td class="pnum">5</td><td class="pname">Stephanie Thomas</td><td class="pnum">6</td><td class="pname">Eimear Conroy</td></tr><tr><td class="pnum">7</td><td class="pname">Thomas Bricknell</td><td class="pnum">8</td><td class="pname">Henry Bushell</td></tr><tr><td class="pnum">9</td><td class="pname">Marcus Evans</td><td class="pnum">10</td><td class="pname">Robert Grist</td></tr><tr><td class="pnum">11</td><td class="pname">Akshan Jirasinha</td><td class="pnum">12</td><td class="pname">Alex Jopling</td></tr><tr><td class="pnum">13</td><td class="pname">Franco Perticaro</td><td class="pnum">14</td><td class="pname">Andrew Smerdon</td></tr><tr><td class="pnum">15</td><td class="pname">Robert (Bobby) Taylor</td><td class="pnum">16</td><td class="pname">Chris Wade</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Carmina Harrod, Jack Linthwaite, Chris Blandford, James Webber, Rupert Macey</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Lexie Williams</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Martin Bunn</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Sarah Banwell</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Scott Gunning</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Five-team division (10 rounds, 8 matches, 2 byes). 9–11 games total.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">Chile</span><span class="opp-tag">France</span><span class="opp-tag">Germany</span><span class="opp-tag">Netherlands</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Semi-Final play-off (4th v 5th), Semi Finals, then Bronze and Gold Medal Matches</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-mens-35s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_29.jpeg');background-position:center 20%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Seniors Division · ETC 2026</div>
+      <h1 class="sq-title">England Men's 35s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Aaron Treagus</td><td class="pnum">2</td><td class="pname">Adam Faulkner</td></tr><tr><td class="pnum">3</td><td class="pname">Carl Cockburn</td><td class="pnum">4</td><td class="pname">Dan Gurry</td></tr><tr><td class="pnum">5</td><td class="pname">James Stewart</td><td class="pnum">6</td><td class="pname">John Cranston</td></tr><tr><td class="pnum">7</td><td class="pname">Jonathan Clark</td><td class="pnum">8</td><td class="pname">Marcus Cubillo</td></tr><tr><td class="pnum">9</td><td class="pname">Neil Guess</td><td class="pnum">10</td><td class="pname">Neil Hennigan</td></tr><tr><td class="pnum">11</td><td class="pname">Owain Richardson</td><td class="pnum">12</td><td class="pname">Peter Bowyer</td></tr><tr><td class="pnum">13</td><td class="pname">Richard Speir</td><td class="pnum">14</td><td class="pname">Steven Holland</td></tr><tr><td class="pnum">15</td><td class="pname">Will Simpson</td><td class="pnum">16</td><td class="pname">Will Alkin</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Will Alkin, George Hedley-Miller</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Daren Roe</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Matt Jaynes</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Steve Trenchard</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Alex Ibbs</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Plays within combined Men's 30/35 group. Five-match test series against Wales M35, plus four M30 cross-over fixtures.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">Wales M35 (5-match test series)</span><span class="opp-tag">+ four M30 nations (per the draw)</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Result decided across M35 test series and cross-over fixtures</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-womens-35s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_30.jpeg');background-position:center 25%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Seniors Division · ETC 2026</div>
+      <h1 class="sq-title">England Women's 35s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Fae Clerey</td><td class="pnum">2</td><td class="pname">Stacey Coffin</td></tr><tr><td class="pnum">3</td><td class="pname">Athena Enderstein</td><td class="pnum">4</td><td class="pname">Bree Hill</td></tr><tr><td class="pnum">5</td><td class="pname">Sonya Lam</td><td class="pnum">6</td><td class="pname">Lois Lau</td></tr><tr><td class="pnum">7</td><td class="pname">Lucy Neal-Hooke</td><td class="pnum">8</td><td class="pname">Rachel Parry</td></tr><tr><td class="pnum">9</td><td class="pname">Beth Redfern</td><td class="pnum">10</td><td class="pname">Natasha Rose</td></tr><tr><td class="pnum">11</td><td class="pname">Claire Rylance</td><td class="pnum">12</td><td class="pname">Hanako Suzuki</td></tr><tr><td class="pnum">13</td><td class="pname">Claire Waddell</td><td class="pnum">14</td><td class="pname">Abigail Walters</td></tr><tr><td class="pnum">15</td><td class="pname">Catriona Weir</td><td class="pnum">16</td><td class="pname">Rose Willoughby</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Laura Balfour, Emily Harding, Jade Wong, Lesley Marshall</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Oscar Davies</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Rory Bott</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Angus King</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Alex Ibbs</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Five-team division (10 rounds, 8 matches, 2 byes). England plays up to 9 games.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">France</span><span class="opp-tag">Ireland</span><span class="opp-tag">Wales</span><span class="opp-tag">EuroSelect Senior Women's (guest)</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Bronze and Gold Medal Matches</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-mens-40s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_31.jpeg');background-position:center 15%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Masters Division · ETC 2026</div>
+      <h1 class="sq-title">England Men's 40s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Doug Benzie</td><td class="pnum">2</td><td class="pname">Gareth Beynon</td></tr><tr><td class="pnum">3</td><td class="pname">Dean Bradley</td><td class="pnum">4</td><td class="pname">Stuart Bussell</td></tr><tr><td class="pnum">5</td><td class="pname">Ruez Durrani</td><td class="pnum">6</td><td class="pname">Andrew Hammond</td></tr><tr><td class="pnum">7</td><td class="pname">Steve Johnson</td><td class="pnum">8</td><td class="pname">Liam Lawton</td></tr><tr><td class="pnum">9</td><td class="pname">Daniel Lewis</td><td class="pnum">10</td><td class="pname">David Little</td></tr><tr><td class="pnum">11</td><td class="pname">Will Lush</td><td class="pnum">12</td><td class="pname">Fraser McPherson</td></tr><tr><td class="pnum">13</td><td class="pname">Colin Scott</td><td class="pnum">14</td><td class="pname">Oliver Sills</td></tr><tr><td class="pnum">15</td><td class="pname">Chris Wall</td><td class="pnum">16</td><td class="pname">Daniel Wines</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Alastair Chadwick, Eil Wyn Lim, Amro Karim</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Jason Logan</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Matt Mahoney</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Rebecca MacDonald</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Jade Burton</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Eight-team division. 7 rounds, 7 matches, followed by knockouts. 9 games total.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">France</span><span class="opp-tag">Ireland</span><span class="opp-tag">Italy</span><span class="opp-tag">Portugal</span><span class="opp-tag">Scotland</span><span class="opp-tag">Spain</span><span class="opp-tag">Wales</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Semi Finals (1st v 4th, 2nd v 3rd), then Bronze and Gold Medal Matches</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-womens-40s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_32.jpeg');background-position:center 15%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Masters Division · ETC 2026</div>
+      <h1 class="sq-title">England Women's 40s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Laura Anderson</td><td class="pnum">2</td><td class="pname">Julia Elmgren</td></tr><tr><td class="pnum">3</td><td class="pname">Emilie Eve</td><td class="pnum">4</td><td class="pname">Emma Court</td></tr><tr><td class="pnum">5</td><td class="pname">Kylie Hutchison</td><td class="pnum">6</td><td class="pname">Rebecca Maxwell</td></tr><tr><td class="pnum">7</td><td class="pname">Marie Murphy</td><td class="pnum">8</td><td class="pname">Yellie Powley-Williams</td></tr><tr><td class="pnum">9</td><td class="pname">Hannah Gael</td><td class="pnum">10</td><td class="pname">Hannah Scott</td></tr><tr><td class="pnum">11</td><td class="pname">Sally Seymour</td><td class="pnum">12</td><td class="pname">Zoe Warren</td></tr><tr><td class="pnum">13</td><td class="pname">Marnie Wills</td><td class="pnum">14</td><td class="pname">Helen Wilson</td></tr><tr><td class="pnum">15</td><td class="pname">Suzanne Wilson</td><td class="pnum">16</td><td class="pname">Nollaig Quinn</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Tiffeny Gould</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Archie Shaw</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Jake Rigby</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Caitlin Cook</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Rich Dean</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Four-team division (6 rounds, 6 matches), shared with England W45 and a guest team.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">England W45</span><span class="opp-tag">Scotland</span><span class="opp-tag">Eurostars W40 (guest)</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">England and Scotland contest the Gold Medal Match; England W45 and guest team play off for 3rd</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-mens-45s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_33.jpeg');background-position:center 30%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Masters Division · ETC 2026</div>
+      <h1 class="sq-title">England Men's 45s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Josh Bingley</td><td class="pnum">2</td><td class="pname">Ben Blackburn</td></tr><tr><td class="pnum">3</td><td class="pname">Mark Chiverton</td><td class="pnum">4</td><td class="pname">Gregg Cropper</td></tr><tr><td class="pnum">5</td><td class="pname">Daniel Dyer</td><td class="pnum">6</td><td class="pname">Jason Grace</td></tr><tr><td class="pnum">7</td><td class="pname">Matt Hall</td><td class="pnum">8</td><td class="pname">Joseph Hartley</td></tr><tr><td class="pnum">9</td><td class="pname">Phil Heselwood</td><td class="pnum">10</td><td class="pname">Travis Kenny</td></tr><tr><td class="pnum">11</td><td class="pname">Liam Kirkham</td><td class="pnum">12</td><td class="pname">James Mears</td></tr><tr><td class="pnum">13</td><td class="pname">Christian Prinsloo</td><td class="pnum">14</td><td class="pname">Brian Sibthorp</td></tr><tr><td class="pnum">15</td><td class="pname">Tim Stoller</td><td class="pnum">16</td><td class="pname">Ian Stuart</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Rob Emery, Oli Porritt, Nathan Cole</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Max Perez</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Rob Emery</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Catherine Parsons</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Johanna Kuosa</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Five-team division (10 rounds, 8 matches, 2 byes). England plays up to 9 games.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">France</span><span class="opp-tag">Spain</span><span class="opp-tag">Switzerland</span><span class="opp-tag">Wales</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Bronze and Gold Medal Matches</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-womens-45s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_34.jpeg');background-position:center 20%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Masters Division · ETC 2026</div>
+      <h1 class="sq-title">England Women's 45s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Helen Ayres</td><td class="pnum">2</td><td class="pname">Lisa Broadie</td></tr><tr><td class="pnum">3</td><td class="pname">Lorna Buxton</td><td class="pnum">4</td><td class="pname">Aimee Findlay</td></tr><tr><td class="pnum">5</td><td class="pname">Nikola Halse</td><td class="pnum">6</td><td class="pname">Rebecca (Becky) Hart</td></tr><tr><td class="pnum">7</td><td class="pname">Kate Hyde</td><td class="pnum">8</td><td class="pname">Christine Johnston</td></tr><tr><td class="pnum">9</td><td class="pname">Vonnie Newton</td><td class="pnum">10</td><td class="pname">Louise Rickard</td></tr><tr><td class="pnum">11</td><td class="pname">Gaynor Sewell</td><td class="pnum">12</td><td class="pname">Michelle Stuart</td></tr><tr><td class="pnum">13</td><td class="pname">Linda Tamakaha</td><td class="pnum">14</td><td class="pname">Kate Thorpe</td></tr><tr><td class="pnum">15</td><td class="pname">Hester Williams</td><td class="pnum">16</td><td class="pname">Heidi Yeoman</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Alison Griffiths, Emma McCormick, Kirsty Prior, Lorraine Grinter, Melissa Gauthier</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Sammie Phillips / Katrina Spring</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Soul Phoenix</td></tr><tr><td class="srole">Team Manager</td><td class="sname">James Kelting</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Johanna Kuosa</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Competes inside the Women's 40s division alongside England W40, Scotland and the Eurostars guest team. 6 matches.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">England W40</span><span class="opp-tag">Scotland</span><span class="opp-tag">Eurostars W40 (guest)</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">England W45 contests the play-off for 3rd place against the guest team</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-mens-50s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_35.jpeg');background-position:center 15%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Masters Division · ETC 2026</div>
+      <h1 class="sq-title">England Men's 50s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">James Barnett</td><td class="pnum">2</td><td class="pname">Paul Bunce</td></tr><tr><td class="pnum">3</td><td class="pname">Manuel Canas Bottos</td><td class="pnum">4</td><td class="pname">Paul Foster</td></tr><tr><td class="pnum">5</td><td class="pname">Gavin Hogan</td><td class="pnum">6</td><td class="pname">Lloyd Hook</td></tr><tr><td class="pnum">7</td><td class="pname">Luke Hudson</td><td class="pnum">8</td><td class="pname">Brett Milligan</td></tr><tr><td class="pnum">9</td><td class="pname">Thom Naylor</td><td class="pnum">10</td><td class="pname">Michael Roa</td></tr><tr><td class="pnum">11</td><td class="pname">Ian Spencer</td><td class="pnum">12</td><td class="pname">Jeff Sue</td></tr><tr><td class="pnum">13</td><td class="pname">Joe Swanson</td><td class="pnum">14</td><td class="pname">Matt Wilkinson</td></tr><tr><td class="pnum">15</td><td class="pname">Adrian Williams</td><td class="pnum">16</td><td class="pname">Simon Witton</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Bill Lees, Niall Buggy, Richard Saunders, Jeremy Hill</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Mark Holmes</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Gene MacDonald</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Eddie French</td></tr><tr><td class="srole">Team Manager</td><td class="sname">Libby Steele</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Jade Burton</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Combined Men's 50/55 group. England M50 in Pool A (5 rounds, 5 matches), then cross-pool knockouts. 7–9 games total. M50 Teams: England, Scotland, Jersey, Ireland, Wales, France, Portugal and Chile.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">Scotland M50</span><span class="opp-tag">Jersey M50</span><span class="opp-tag">Ireland M50</span><span class="opp-tag">Wales M55</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Cross-pool Quarter Finals, then Semi Finals, Bronze and Gold Medal Matches</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="squad-mens-55s" class="page-section squad-detail-page">
+  <div class="squad-hero" style="background-image:url('images/img_36.jpeg');background-position:center 20%;">
+    <div class="squad-hero-overlay"></div>
+    <div class="squad-hero-content">
+      <div class="sq-back-btn" onclick="showSection('squads',null)">← All Squads</div>
+      <div class="sq-division-tag">Masters Division · ETC 2026</div>
+      <h1 class="sq-title">England Men's 55s</h1>
+      <div class="sq-subtitle">Vichy, France · 21–25 July 2026</div>
+    </div>
+  </div>
+  <div class="content-wrap">
+    <div class="squad-detail-grid">
+      <div class="squad-detail-left">
+        <div class="squad-block">
+          <div class="squad-block-title">Squad</div>
+          <table class="player-table"><tbody><tr><td class="pnum">1</td><td class="pname">Richie Bernardo</td><td class="pnum">2</td><td class="pname">Andy Brooksbank</td></tr><tr><td class="pnum">3</td><td class="pname">Mark Carlyon</td><td class="pnum">4</td><td class="pname">Tim Gee</td></tr><tr><td class="pnum">5</td><td class="pname">Iain Grisewood</td><td class="pnum">6</td><td class="pname">Martin Hawes</td></tr><tr><td class="pnum">7</td><td class="pname">Mark Hobson</td><td class="pnum">8</td><td class="pname">Richard Horne</td></tr><tr><td class="pnum">9</td><td class="pname">Steve Lines</td><td class="pnum">10</td><td class="pname">Paul Nolan</td></tr><tr><td class="pnum">11</td><td class="pname">Theo Oberholzer</td><td class="pnum">12</td><td class="pname">Adrian Riggs</td></tr><tr><td class="pnum">13</td><td class="pname">Ian Rowberry</td><td class="pnum">14</td><td class="pname">John Tuite</td></tr><tr><td class="pnum">15</td><td class="pname">Andy Verney</td><td class="pnum">16</td><td class="pname">Craig Wheeler</td></tr></tbody></table>
+          <p class="ntrs"><span>NTRs:</span> Francis Morris, John Kearns, Mark Wittet, Keith Dunleavy, Martin Reynard</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Coaching &amp; Support Staff</div>
+          <table class="staff-table"><tbody><tr><td class="srole">Head Coach</td><td class="sname">Andy Sharpes</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Clive Lovering</td></tr><tr><td class="srole">Assistant Coach</td><td class="sname">Adrian Danks</td></tr><tr><td class="srole">Team Manager</td><td class="sname">TBC</td></tr><tr><td class="srole">Performance Psychologist</td><td class="sname">Jade Burton</td></tr></tbody></table>
+        </div>
+      </div>
+      <div class="squad-detail-right">
+        <div class="squad-block">
+          <div class="squad-block-title">Competition Format</div>
+          <p class="sq-detail-text">Plays within combined Men's 50/55 group. Three M55 nations form an M55 pool, playing one another twice.</p>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">England's Opponents</div>
+          <div class="opp-tags"><span class="opp-tag">Wales M55</span><span class="opp-tag">Portugal M55</span></div>
+        </div>
+        <div class="squad-block">
+          <div class="squad-block-title">Route to the Medals</div>
+          <p class="sq-detail-text route-text">Top two M55 teams contest the Gold Medal Match</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <strong>COME ON ENGLAND — VICHY 2026</strong><br>
+  <span style="color:rgba(255,255,255,.5);">14 Touring Teams · One Nation · European Touch Championships 2026</span><br>
+  <span style="color:rgba(255,255,255,.4);font-size:.75rem;margin-top:8px;display:block;">England Touch Association · www.englandtouch.org.uk · Official Tour Brochure Version 1: 05-06-26</span>
+</footer>
+
+<script>
+function showSection(id,btn){
+  document.querySelectorAll('.page-section').forEach(s=>s.classList.remove('active'));
+  var el=document.getElementById(id);
+  if(el)el.classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  closeAll();window.scrollTo(0,0);
+}
+function toggleDropdown(navId){
+  var item=document.getElementById(navId);
+  var wasOpen=item.classList.contains('open');
+  closeAll();
+  if(!wasOpen)item.classList.add('open');
+}
+function closeAll(){
+  document.querySelectorAll('.nav-item').forEach(i=>i.classList.remove('open'));
+}
+document.addEventListener('click',function(e){
+  if(!e.target.closest('.nav-item'))closeAll();
+});
+function filterSquads(cat,btn){
+  document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.sq-index-card').forEach(card=>{
+    card.style.display=(cat==='all'||card.dataset.cat===cat)?'':'none';
+  });
+}
+</script>
+</body>
+</html>
